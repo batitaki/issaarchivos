@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import  Collection  from './components/Collection'
-
+import  Collection  from './components/collection/Collection'
 
 
 function App() {
