@@ -1,0 +1,30 @@
+.sidenav {
+    height: 100%;
+    width: 80px; /* Ancho de la barra lateral */
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: #333; /* Color de fondo de la barra lateral */
+    padding-top: 20px;
+    transition: width 0.5s; /* Agrega una transición para el cambio de ancho */
+    font-family: "Quantico", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .expanded {
+    width: 280px; /* Ancho expandido */
+  }
+  
+  .sidenav a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    background-color: #555; /* Color de fondo cuando se pasa el ratón sobre un enlace */
+  }
+  

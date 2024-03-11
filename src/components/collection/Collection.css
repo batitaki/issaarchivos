@@ -1,0 +1,31 @@
+  .product-image{
+    width: 300px;
+    height: auto;
+    padding: 15px 15px;
+  }
+  
+  .product-list {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .text {
+    font-family: "Quantico", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 20px;
+  }
+  
+  .product-container {
+    border: 0.3px solid;
+    border-color: red;
+  }
+
+  .info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
