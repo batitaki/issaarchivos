@@ -12,12 +12,18 @@ const Navbar = () => {
   return (
     <div className={`sidenav ${isExpanded ? 'expanded' : ''}`}>
       <div className="toggle-button" onClick={toggleNavbar}>
-        {isExpanded ? 'Cerrar' : 'Expandir'}
+        {isExpanded ? 'X' : 'open'}
       </div>
-      <Link to="/" onClick={toggleNavbar}>Inicio</Link>
-      <Link to="/collection" onClick={toggleNavbar}>Productos</Link>
-      <Link to="/createProduct" onClick={toggleNavbar}>Crear</Link>
-      <Link to="/producto/:id" onClick={toggleNavbar}>Acerca de</Link>
+
+      {/* Condiciona el renderizado de las opciones de navegación */}
+      {isExpanded && (
+        <div className='nav-options'>
+          <Link className='nav-link' to="/" onClick={toggleNavbar}>HOME</Link>
+          <Link className='nav-link' to="/collection" onClick={toggleNavbar}>PRODUCT</Link>
+          <Link className='nav-link' to="/createProduct" onClick={toggleNavbar}>CREATE</Link>
+          <Link className='nav-link' to="/producto/:id" onClick={toggleNavbar}>ABOUT</Link>
+        </div>
+      )}
     </div>
   );
 }
