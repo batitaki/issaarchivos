@@ -62,6 +62,7 @@ const CreateProduct = () => {
           <label htmlFor="Category" className="my-label-form">
             CATEGORY
           </label>
+          <div class="my-select-container">
           <select
             className="my-select-form"
             name="CategoryID"
@@ -77,6 +78,7 @@ const CreateProduct = () => {
               </option>
             ))}
           </select>
+          </div>
         </div>
 
         <div className="my-form-group-form">

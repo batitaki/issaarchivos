@@ -23,7 +23,7 @@ const BackgroundSketch = () => {
     for (let i = 0; i < circles.length; i++) {
       const circle = circles[i];
       p5.fill(0, 0, 255); // Color azul
-      drawStar(p5, circle.x, circle.y, 7, 17, 6); // Dibujar estrella de 6 puntas
+      drawStar(p5, circle.x, circle.y, 7, 17, 10); // Dibujar estrella de 6 puntas
       circle.x += circle.speedX;
       circle.y += circle.speedY;
     }
