@@ -15,6 +15,8 @@
   box-sizing: border-box;
   border-radius: 2px;
   padding: 50px; 
+  background-color: aliceblue;
+  opacity: 0.8; /* Cambia este valor para ajustar la transparencia */
 }
 
 .my-label-form {

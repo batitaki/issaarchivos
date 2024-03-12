@@ -5,13 +5,13 @@
   top: 0;
   background-color: rgba(255, 255, 255, 0.562);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-
   transition: height 0.5s, padding-top 0.5s;
   font-family: "Jacquarda Bastarda 9", serif;
   font-weight: 400;
   font-style: normal;
   display: flex;
   flex-direction: row;
+  justify-content:center ;
   align-items: center;
   z-index: 9999; /* Ajusta el z-index según sea necesario */
 }

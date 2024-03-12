@@ -1,23 +1,14 @@
 .home-img {
-    background-image: url('../../assets/home.jpg'); 
-    background-size: cover;
-    background-position: 5% 5%;
-    background-repeat: no-repeat;
-    width: 100vw;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    position: relative; 
-  }
-  
-  .home-sketch {
-    position: absolute;
-    top: 50%;
-    left: 70%;
-    transform: translate(-50%, -50%);
-    z-index: 500;
-  }
-  .home {
-   display: flex;
-   justify-content: center;
-  }
+  background-image: url('../../assets/home.jpg'); 
+  background-size: cover;
+  background-position: 5% 5%;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative; 
+  z-index: -1;
+  opacity: 0.8; /* Cambia este valor para ajustar la transparencia */
+}
+
