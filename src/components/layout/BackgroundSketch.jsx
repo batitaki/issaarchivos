@@ -17,7 +17,7 @@ const BackgroundSketch = () => {
 
   // Función draw para dibujar en el sketch
   const draw = (p5) => {
-    p5.background(250, 20, 20);
+    p5.background(250);
 
     // Dibujar todos los círculos
     for (let i = 0; i < circles.length; i++) {

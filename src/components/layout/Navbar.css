@@ -3,7 +3,7 @@
   height: 7vh;
   width: 100%;
   top: 0;
-  background-color: rgba(255, 0, 0, 0.469);
+  background-color: rgba(255, 255, 255, 0.469);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: height 0.5s, padding-top 0.5s;
   font-family: "Libre Barcode 39 Text", system-ui;
