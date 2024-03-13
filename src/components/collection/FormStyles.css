@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   margin: 10vh auto; /* Se ajusta automáticamente al centro vertical y horizontal */
-  font-family: "Jacquarda Bastarda 9", serif;
+  font-family: "Libre Barcode 39 Text", system-ui;
   font-style: normal;
   border: 0.5px solid #000000;
   width: 90%; /* Se ajusta al 90% del ancho del contenedor padre */
@@ -12,7 +12,7 @@
   box-sizing: border-box;
   border-radius: 2px;
   padding: 5%; /* Se ajusta al 5% del ancho del contenedor */
-  background-color: aliceblue;
+  background-color: rgb(255, 0, 0);
   opacity: 0.8;
 }
 
@@ -20,7 +20,7 @@
 .form-title {
   display: block;
   margin-bottom: 5px;
-  font-family: "Jacquarda Bastarda 9", serif;
+  font-family: "Libre Barcode 39 Text", system-ui;
   color: #000000ce;
   font-size: 1.5em; /* Tamaño de fuente relativo */
 }
@@ -29,28 +29,28 @@
 .my-textarea-form {
   width: 100%; /* Ancho completo del contenedor */
   max-width: 100%; /* Ancho máximo del contenedor */
-  background-color: #ffffff;
+  background-color: #65e0ff;
   border: 0.5px solid #000000;
   padding: 5px;
   outline: none;
   border-radius: 2px;
   margin-bottom: 15px;
   box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
-  font-family: "Jacquarda Bastarda 9", serif; /* Aplica la fuente deseada */
+  font-family: "Libre Barcode 39 Text", system-ui;
 }
 
 /* Estilos para el select */
 .my-select-form {
   width: 100%;
   max-width: 100%;
-  background-color: #ffffff;
+  background-color: #4be7ff;
   border: 0.5px solid #000000;
   padding: 5px;
   outline: none;
   border-radius: 2px;
   margin-bottom: 15px;
   box-sizing: border-box;
-  font-family: "Jacquarda Bastarda 9", serif; /* Aplica la fuente deseada */
+  font-family: "Libre Barcode 39 Text", system-ui;
   color: #000000ce; /* Color del texto del select */
 }
 
@@ -67,11 +67,10 @@
   right: 0;
   bottom: 0;
   padding: 5px;
-  font-family: "Jacquarda Bastarda 9", serif; /* Aplica la fuente deseada */
+  font-family: "Libre Barcode 39 Text", system-ui;
   color: #000000ce; /* Color del texto del select */
   pointer-events: none; /* Evita la interacción del usuario con el texto */
   z-index: 1; /* Asegura que el texto esté sobre el select */
-  font-family: "Jacquarda Bastarda 9", serif; /* Aplica la fuente deseada */
 }
 
 
@@ -80,15 +79,19 @@
   width: 100%;
   margin-top: 2vw;
   color: #000000ce;
-  background-color: #ffffff;
+  background-color: #4be7ff;
   border: 0.5px solid #000000;
   text-decoration: none;
   text-align: center;
   padding: 10px;
   border-radius: 2px;
-  box-sizing: border-box;
-  font-family: "Jacquarda Bastarda 9", serif; /* Aplica la fuente deseada */
+  font-family: "Libre Barcode 39 Text", system-ui;
 }
+
+.category-list li {
+  cursor: pointer;
+}
+
 
 
 @media (max-width: 768px) {

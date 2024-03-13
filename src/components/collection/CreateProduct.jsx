@@ -11,6 +11,7 @@ const CreateProduct = () => {
     Price: '',
     Description: '',
   });
+  const [categorySelected, setCategorySelected] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -20,6 +21,14 @@ const CreateProduct = () => {
 
     fetchData();
   }, []);
+
+  const handleCategoryClick = (categoryID) => {
+    setFormData({
+      ...formData,
+      CategoryID: categoryID,
+    });
+    setCategorySelected(true);
+  };
 
   const handleChange = (e) => {
     if (e.target.type === 'file') {
@@ -58,83 +67,79 @@ const CreateProduct = () => {
     <div className="my-container-register">
       <h3 className="form-title"> CREATE PRODUCT</h3>
       <form onSubmit={handleSubmit} encType="multipart/form-data" className="my-form-form">
-        <div className="my-form-group-form">
-          <label htmlFor="Category" className="my-label-form">
-            CATEGORY
-          </label>
-          <div class="my-select-container">
-          <select
-            className="my-select-form"
-            name="CategoryID"
-            value={formData.CategoryID}
-            onChange={handleChange}
-          >
-            <option value="" disabled defaultValue>
+        {!categorySelected && (
+          <div className="my-form-group-form">
+            <label htmlFor="Category" className="my-label-form">
               SELECT CATEGORY
-            </option>
-            {registeredCategories.map((category) => (
-              <option key={category.ID} value={category.ID}>
-                {category.Name}
-              </option>
-            ))}
-          </select>
+            </label>
+            <ul className="category-list">
+              {registeredCategories.map((category) => (
+                <li key={category.ID} onClick={() => handleCategoryClick(category.ID)}>
+                  {category.Name}
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
+        )}
 
-        <div className="my-form-group-form">
-          <label htmlFor="Name" className="my-label-form">
-            NAME
-          </label>
-          <input
-            type="text"
-            className="my-input-form"
-            name="Name"
-            value={formData.Name}
-            onChange={handleChange}
-            required
-          />
-        </div>
+        {categorySelected && (
+          <>
+            <div className="my-form-group-form">
+              <label htmlFor="Name" className="my-label-form">
+                NAME
+              </label>
+              <input
+                type="text"
+                className="my-input-form"
+                name="Name"
+                value={formData.Name}
+                onChange={handleChange}
+                required
+              />
+            </div>
 
-        <div className="my-form-group-form">
-          <label htmlFor="Price" className="my-label-form">
-            PRICE
-          </label>
-          <textarea
-            className="my-textarea-form"
-            name="Price"
-            value={formData.Price}
-            onChange={handleChange}
-          />
-        </div>
+            <div className="my-form-group-form">
+              <label htmlFor="Price" className="my-label-form">
+                PRICE
+              </label>
+              <textarea
+                className="my-textarea-form"
+                name="Price"
+                value={formData.Price}
+                onChange={handleChange}
+              />
+            </div>
 
-        <div className="my-form-group-form">
-          <label htmlFor="Description" className="my-label-form">
-            DESCRIPTION
-          </label>
-          <textarea
-            className="my-textarea-form"
-            name="Description"
-            value={formData.Description}
-            onChange={handleChange}
-          />
-        </div>
+            <div className="my-form-group-form">
+              <label htmlFor="Description" className="my-label-form">
+                DESCRIPTION
+              </label>
+              <textarea
+                className="my-textarea-form"
+                name="Description"
+                value={formData.Description}
+                onChange={handleChange}
+              />
+            </div>
 
-        <div className="my-form-group-form">
-          <label className="my-label-form" htmlFor="Image">
-            IMAGE
-          </label>
-          <input
-            type="file"
-            className="my-input-form"
-            name="Image"
-            accept="image/*"
-            onChange={handleChange}
-          />
-        </div>
+            <div className="my-form-group-form">
+              <label className="my-label-form" htmlFor="Image">
+                IMAGE
+              </label>
+              <input
+                type="file"
+                className="my-input-form"
+                name="Image"
+                accept="image/*"
+                onChange={handleChange}
+              />
+            </div>
 
-        <button type="submit" className="my-button-form">
-          CREATE PRODUCT
-        </button>
+            <button type="submit" className="my-button-form">
+              CREATE PRODUCT
+            </button>
+          </>
+        )}
       </form>
     </div>
   );

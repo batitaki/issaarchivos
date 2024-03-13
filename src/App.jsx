@@ -6,7 +6,8 @@ import CreateProduct from './components/collection/CreateProduct';
 import ProductDetail from './components/collection/ProductDetail';
 import Navbar from './components/layout/Navbar';
 import './App.css';
-import BackgroundSketch from './components/BackgroundSketch';
+import BackgroundSketch from './components/layout/BackgroundSketch';
+
 
 function App() {
 

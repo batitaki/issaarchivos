@@ -47,15 +47,14 @@ export const getCategory = async () => {
   }
 };
 
+
 export const getProductById = async (productId) => {
   try {
-    const response = await fetch(
-      `http://localhost:3002/products/products/${productId}`
-    );
+    const response = await fetch(`http://localhost:3002/products/products/${productId}`); 
     const data = await response.json();
     return data;
   } catch (error) {
     console.error(`Error fetching product with ID ${productId}:`, error);
-    return null;
+    return null; 
   }
 };

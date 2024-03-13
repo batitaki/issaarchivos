@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getProducts } from '../../services/fetchProducts';
 import './Collection.css';
+import { Link } from 'react-router-dom';
 
 const Collection = () => {
   const [products, setProducts] = useState([]);
@@ -28,15 +29,13 @@ const Collection = () => {
                 {products
                   .filter((_, index) => index % 3 === columnIndex)
                   .map((product) => (
+                    <Link to={`/product/${product.ID}`} key={product.ID}>
                     <div className="product-container" key={product.id}>
-                      <div className="image-container">
-                        <img className="product-image" src={product.Image} alt={product.Name} />
-                      </div>
-                      <div className="info-container">
-                        <p className="text">{product.Name}</p>
-                        <p className="text">Price: {product.Price}</p>
+                      <div className="product">
+                        <img className="product-image" src={product.Image} alt={product.Title} />
                       </div>
                     </div>
+                  </Link>
                   ))}
               </div>
             ))}

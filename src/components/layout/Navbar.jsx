@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <div className={`sidenav ${isExpanded ? 'expanded' : ''}`}>
       <div className="toggle-button" onClick={toggleNavbar}>
-        {isExpanded ? 'X' : 'open'}
+        {isExpanded ? 'X' : 'OPEN'}
       </div>
 
       {/* Condiciona el renderizado de las opciones de navegación */}
@@ -21,7 +21,7 @@ const Navbar = () => {
           <Link className='nav-link' to="/" onClick={toggleNavbar}>HOME</Link>
           <Link className='nav-link' to="/collection" onClick={toggleNavbar}>PRODUCT</Link>
           <Link className='nav-link' to="/createProduct" onClick={toggleNavbar}>CREATE</Link>
-          <Link className='nav-link' to="/producto/:id" onClick={toggleNavbar}>ABOUT</Link>
+          <Link className='nav-link' to="/product/:id" onClick={toggleNavbar}>ABOUT</Link>
         </div>
       )}
     </div>
