@@ -7,7 +7,7 @@ import ProductDetail from './components/collection/ProductDetail';
 import Navbar from './components/layout/Navbar';
 import './App.css';
 import BackgroundSketch from './components/layout/BackgroundSketch';
-import Fan from './components/collection/sketch/Fan';
+import Fan from './components/collection/sketch/Fan'
 
 
 function App() {
@@ -16,7 +16,7 @@ function App() {
   return (
     <div>
       <Router>
-
+<BackgroundSketch/>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

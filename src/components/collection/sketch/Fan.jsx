@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Sketch from "react-p5";
-import particleImage from "../../../assets/miniStar.png"; // Ruta de tu imagen de partículas
+import particleImage from "../../../assets/azul.png";
 
 export default () => {
   const [particles, setParticles] = useState([]);
@@ -16,7 +16,7 @@ export default () => {
   };
 
   const draw = (p5) => {
-    p5.background(10, 20, 30);
+    p5.background(250);
     p5.noFill();
 
     // Dibujar y actualizar partículas
@@ -48,7 +48,7 @@ export default () => {
       this.acceleration = p5.createVector();
       this.maxSpeed = 3;
       this.maxForce = 0.05;
-      this.radius = p5.random(10, 20); // Tamaño aleatorio
+      this.radius = p5.random(10, 40); // Tamaño aleatorio
       this.alpha = 255; // Opacidad inicial
       // Carga de la imagen de la partícula
       this.particleImg = p5.loadImage(particleImage);

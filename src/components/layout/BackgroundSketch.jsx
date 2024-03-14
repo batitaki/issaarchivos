@@ -1,68 +1,95 @@
-import React, { useState } from 'react';
-import Sketch from 'react-p5';
+import React, { useState } from "react";
+import Sketch from "react-p5";
+import particleImage from "../../assets/koko.png";
 
 const BackgroundSketch = () => {
-  // Estado para almacenar las coordenadas anteriores del mouse
-  const [prevX, setPrevX] = useState(0);
-  const [prevY, setPrevY] = useState(0);
+  const [particles, setParticles] = useState([]);
+  let prevMouseX = 0;
+  let prevMouseY = 0;
 
-  // Estado para almacenar los círculos dibujados
-  const [circles, setCircles] = useState([]);
-
-  // Función setup para inicializar el sketch
   const setup = (p5, canvasParentRef) => {
-    p5.createCanvas(window.innerWidth, window.innerHeight * 6).parent(canvasParentRef);
-    p5.background(255);
+    // Crear lienzo del tamaño de la ventana
+    p5.createCanvas(window.innerWidth, window.innerHeight).parent(
+      canvasParentRef
+    );
+    p5.angleMode(p5.DEGREES);
+    p5.rectMode(p5.CENTER);
+    // Crear partículas iniciales al inicio
+    for (let i = 0; i < 50; i++) {
+      const particle = new Particle(p5, p5.random(p5.width), p5.random(p5.height));
+      particles.push(particle);
+    }
   };
 
-  // Función draw para dibujar en el sketch
   const draw = (p5) => {
     p5.background(250);
+    p5.noFill();
 
-    // Dibujar todos los círculos
-    for (let i = 0; i < circles.length; i++) {
-      const circle = circles[i];
-      p5.fill(0, 0, 255); // Color azul
-      drawStar(p5, circle.x, circle.y, 7, 17, 7); // Dibujar estrella de 6 puntas
-      circle.x += circle.speedX;
-      circle.y += circle.speedY;
+    // Dibujar y actualizar partículas
+    for (let i = particles.length - 1; i >= 0; i--) {
+      const particle = particles[i];
+      particle.update(p5);
+      particle.display(p5);
+      // Eliminar partícula si ha desaparecido
+      if (particle.isDead()) {
+        particles.splice(i, 1);
+      }
     }
 
-    // Eliminar círculos que estén muy lejos
-    setCircles(circles.filter(circle => p5.dist(circle.x, circle.y, p5.mouseX, p5.mouseY) < 100));
-
-    // Dibujar un nuevo círculo si el mouse se ha movido
-    if (p5.mouseX !== prevX || p5.mouseY !== prevY) {
-      setPrevX(p5.mouseX);
-      setPrevY(p5.mouseY);
-      setCircles([...circles, { x: p5.mouseX, y: p5.mouseY, speedX: p5.random(-2, 2), speedY: p5.random(-2, 2) }]);
+    // Crear partícula en la posición del mouse si se está moviendo
+    if (prevMouseX !== p5.mouseX || prevMouseY !== p5.mouseY) {
+      if (particles.length < 50) {
+        const particle = new Particle(p5, p5.mouseX, p5.mouseY);
+        particles.push(particle);
+      }
+      prevMouseX = p5.mouseX;
+      prevMouseY = p5.mouseY;
     }
   };
 
-// Función para dibujar una estrella de n puntas
-const drawStar = (p5, x, y, radius1, radius2, npoints) => {
-    let angle = p5.TWO_PI / npoints;
-    let halfAngle = angle / 2.0;
-    p5.beginShape();
-    for (let a = 0; a < p5.TWO_PI; a += angle) {
-        // Selecciona un color aleatorio de la paleta de azules y celestes
-        let fillColor = p5.color(p5.random(100, 180), p5.random(150, 255), p5.random(200, 255));
-        p5.fill(fillColor);
-
-        let sx = x + p5.cos(a) * radius2 / 2; // Reducimos el radio a la mitad
-        let sy = y + p5.sin(a) * radius2 / 2; // Reducimos el radio a la mitad
-        p5.vertex(sx, sy);
-
-        // Selecciona otro color aleatorio para el siguiente vértice
-        fillColor = p5.color(p5.random(100, 180), p5.random(150, 255), p5.random(200, 255));
-        p5.fill(fillColor);
-
-        sx = x + p5.cos(a + halfAngle) * radius1 / 2; // Reducimos el radio a la mitad
-        sy = y + p5.sin(a + halfAngle) * radius1 / 2; // Reducimos el radio a la mitad
-        p5.vertex(sx, sy);
+  class Particle {
+    constructor(p5, x, y) {
+      this.position = p5.createVector(x, y);
+      this.velocity = p5.createVector(p5.random(-1, 1), p5.random(-1, 1));
+      this.acceleration = p5.createVector();
+      this.maxSpeed = 3;
+      this.maxForce = 0.05;
+      this.radius = p5.random(2, 10); // Tamaño aleatorio
+      this.alpha = 255; // Opacidad inicial
+      // Carga de la imagen de la partícula
+      this.particleImg = p5.loadImage(particleImage);
+      // Calcular el número de ciclos de dibujo para 2 segundos
+      this.lifespan = 30; // 60 cuadros por segundo * 2 segundos
     }
-    p5.endShape(p5.CLOSE);
-};
+
+    update(p5) {
+      this.velocity.add(this.acceleration);
+      this.velocity.limit(this.maxSpeed);
+      this.position.add(this.velocity);
+      this.acceleration.mult(0);
+      // Disminuir la opacidad con el tiempo
+      this.alpha -= 105 / this.lifespan;
+    }
+
+display(p5) {
+  // Calculate aspect ratio
+  const aspectRatio = this.particleImg.width / this.particleImg.height;
+  // Calculate width and height based on radius and aspect ratio
+  const width = this.radius * 2;
+  const height = width / aspectRatio;
+  
+  // Draw the image of the particle with opacity
+  p5.tint(255, this.alpha);
+  p5.imageMode(p5.CENTER);
+  p5.image(this.particleImg, this.position.x, this.position.y, width, height);
+  p5.noTint();
+}
+
+
+    isDead() {
+      return this.alpha <= 0; // La partícula desaparece cuando la opacidad es menor o igual a 0
+    }
+  }
 
   return (
     <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: -1 }}>
