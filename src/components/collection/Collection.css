@@ -4,6 +4,7 @@
     align-items: center;
     text-align: center;
     margin-top: 17vh;
+    position: relative;
   }
   
   .columns-container {
@@ -60,5 +61,13 @@
     margin-bottom: 30px;
     padding: 20px;
     box-sizing: border-box;
+  }
+
+  .category-link{
+      padding: 10px 15px;
+      text-decoration: none;
+      font-size: 30px;
+      color: rgb(0, 0, 0);
+      font-family: "Libre Barcode 39 Text", system-ui;
   }
   

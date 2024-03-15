@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Sketch from "react-p5";
-import particleImage from "../../assets/koko.png";
+import particleImage from "../../assets/azul.png";
 
 const BackgroundSketch = () => {
   const [particles, setParticles] = useState([]);
+  const [particleImg, setParticleImg] = useState(null);
   let prevMouseX = 0;
   let prevMouseY = 0;
 
@@ -14,6 +15,10 @@ const BackgroundSketch = () => {
     );
     p5.angleMode(p5.DEGREES);
     p5.rectMode(p5.CENTER);
+
+    // Cargar la imagen de partícula una vez
+    setParticleImg(p5.loadImage(particleImage));
+
     // Crear partículas iniciales al inicio
     for (let i = 0; i < 50; i++) {
       const particle = new Particle(p5, p5.random(p5.width), p5.random(p5.height));
@@ -54,6 +59,7 @@ const BackgroundSketch = () => {
       this.acceleration = p5.createVector();
       this.maxSpeed = 3;
       this.maxForce = 0.05;
+      this.particleImg = particleImg; // Usar la imagen cargada
       this.radius = p5.random(2, 10); // Tamaño aleatorio
       this.alpha = 255; // Opacidad inicial
       // Carga de la imagen de la partícula

@@ -1,10 +1,10 @@
 .sidenav {
-  position: relative;
+  position: fixed;
   height: 7vh;
   width: 100%;
   top: 0;
-  background-color: rgba(255, 255, 255, 0.469);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+
   transition: height 0.5s, padding-top 0.5s;
   font-family: "Libre Barcode 39 Text", system-ui;
   font-weight: 400;
@@ -12,8 +12,8 @@
   display: flex;
   flex-direction: row;
   justify-content:center ;
-
   z-index: 9999; /* Ajusta el z-index según sea necesario */
+  opacity: 0.8; /* Ajusta la opacidad según sea necesario */
 }
 
 .expanded {
@@ -46,8 +46,8 @@ color: #0fdbff;
 
 .toggle-button  {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: start;
+  flex-direction: row;
   color: rgb(0, 0, 0);
   border: none;
   cursor: pointer;

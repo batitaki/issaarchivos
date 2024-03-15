@@ -9,3 +9,10 @@
     justify-content: center;
     margin-top: 10vh;
   }
+
+  .loading {
+    font-family: "Libre Barcode 39 Text", system-ui;
+    display: flex;
+    justify-content:center;
+    margin-top: 10vh;
+  }

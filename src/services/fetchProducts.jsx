@@ -58,3 +58,25 @@ export const getProductById = async (productId) => {
     return null; 
   }
 };
+
+export const getProductsByCategory = async (categoryId) => {
+  try {
+    const response = await fetch(`http://localhost:3002/products/byCategory/${categoryId}`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(`Error fetching products for category with ID ${categoryId}:`, error);
+    return [];
+  }
+};
+
+export const getCategoryById = async (categoryId) => {
+  try {
+    const response = await fetch(`http://localhost:3002/products/category/${categoryId}`);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(`Error fetching category with ID ${categoryId}:`, error);
+    return null;
+  }
+};

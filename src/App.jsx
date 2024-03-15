@@ -1,29 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/layout/Home';
 import Collection from './components/collection/Collection';
 import CreateProduct from './components/collection/CreateProduct';
 import ProductDetail from './components/collection/ProductDetail';
 import Navbar from './components/layout/Navbar';
+import Category from './components/collection/Category'; // Importa el componente Category
 import './App.css';
 import BackgroundSketch from './components/layout/BackgroundSketch';
-import Fan from './components/collection/sketch/Fan'
-
+import Fan from './components/collection/sketch/Fan';
 
 function App() {
-
-
   return (
     <div>
       <Router>
-<BackgroundSketch/>
+        <BackgroundSketch />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/fan" element={<Fan />} />
-          <Route path="/collection" element={<Collection />} />
+          <Route path="/shop" element={<Collection />} />
           <Route path="/createProduct" element={<CreateProduct />} />
           <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/category/:categoryId" element={<Category />} /> {/* Agrega la nueva ruta para Category */}
         </Routes>
       </Router>
     </div>
