@@ -1,0 +1,37 @@
+.category {
+    display: flex;
+    flex-direction: column;
+    font-family: "Bungee Hairline", sans-serif;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.category-container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.category-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: "Bungee Hairline", sans-serif;
+    align-items: center;
+    padding: 20px 20px;
+    list-style: none;
+}
+
+.category-info-container{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    margin-bottom: 40px;
+
+}
+
+.name-category{
+    margin-bottom: 20px;
+}
+

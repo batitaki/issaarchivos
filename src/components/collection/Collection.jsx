@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getProducts, getCategory } from '../../services/fetchProducts';
 import './Collection.css';
 import { Link } from 'react-router-dom';
+import CategoryNavbar from './CategoryNavbar';
 
 const Collection = () => {
   const [products, setProducts] = useState([]);
@@ -33,11 +34,8 @@ const Collection = () => {
   return (
     <>
       <div className="collection-container">
-        <div className="categories">
-          {categories.map(category => (
-            <Link key={category.ID} className='category-link' to={`/category/${category.ID}`}>{category.Name}</Link>
-          ))}
-        </div>
+        
+                   <CategoryNavbar categories={categories} /> 
 
         <div className="products">
           <div className="columns-container">
