@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getCategoryById, getProductsByCategory } from '../../services/fetchProducts';
+import { getCategoryById, getProductsByCategory } from '../../../services/fetchProducts';
 import './Category.css';
 import CategoryNavbar from './CategoryNavbar';
 

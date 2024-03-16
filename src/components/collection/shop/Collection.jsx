@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { getProducts, getCategory } from '../../services/fetchProducts';
+import { getProducts, getCategory } from '../../../services/fetchProducts';
 import './Collection.css';
 import { Link } from 'react-router-dom';
-import CategoryNavbar from './CategoryNavbar';
+import CategoryNavbar from '../categories/CategoryNavbar';
 
 const Collection = () => {
   const [products, setProducts] = useState([]);
@@ -25,6 +25,7 @@ const Collection = () => {
       } catch (error) {
         console.error('Error getting categories', error);
       }
+
     };
 
     fetchProductsData();

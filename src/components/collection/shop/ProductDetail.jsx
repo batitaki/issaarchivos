@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getCategory, getProductById } from '../../services/fetchProducts';
+import { getCategory, getProductById } from '../../../services/fetchProducts';
 import { SlideshowLightbox } from 'lightbox.js-react';
 import { useTranslation } from "react-i18next";
 import './ProductDetail.css';

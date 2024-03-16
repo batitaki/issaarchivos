@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/layout/Home';
-import Collection from './components/collection/Collection';
-import CreateProduct from './components/collection/CreateProduct';
-import ProductDetail from './components/collection/ProductDetail';
+import Collection from './components/collection/shop/Collection';
+import CreateProduct from './components/form/CreateProduct';
+import ProductDetail from './components/collection/shop/ProductDetail';
 import Navbar from './components/layout/Navbar';
-import Category from './components/collection/Category'; // Importa el componente Category
+import Category from './components/collection/categories/Category'; // Importa el componente Category
 import './App.css';
 import BackgroundSketch from './components/layout/BackgroundSketch';
 import Fan from './components/collection/sketch/Fan';
