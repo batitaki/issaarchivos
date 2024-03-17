@@ -25,7 +25,7 @@
   }
   
   .price {
-    font-family: "DotGothic16", sans-serif;
+    font-family: "Archivo", sans-serif;
     font-size: 1.5vw;
     font-weight: 1;
     margin-bottom: 10px;
@@ -34,7 +34,7 @@
   }
   
   .product-title {
-    font-family: "Libre Barcode 39 Text", system-ui;
+    font-family: "Archivo", sans-serif;
     font-size: 30px;
     font-weight: 1;
     color: #27343a;
@@ -42,7 +42,7 @@
   }
   
   .category-name {
-    font-family: "Libre Barcode 39 Text", system-ui;
+    font-family: "Archivo", sans-serif;
     font-size: 20px;
     font-weight: 1;
     color: #27343a;

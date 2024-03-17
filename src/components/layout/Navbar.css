@@ -3,8 +3,6 @@
   height: 7vh;
   width: 100%;
   top: 0;
-
-
   transition: height 0.5s, padding-top 0.5s;
   font-family: "Libre Barcode 39 Text", system-ui;
   font-weight: 400;
@@ -31,13 +29,13 @@
 .nav-link {
   padding: 10px 15px;
   text-decoration: none;
-  font-size: 40px;
-  color: rgb(0, 0, 0);
+  font-size: 14px;
+  color: rgb(7, 24, 70);
   font-family: "Bungee Hairline", sans-serif;
 }
 
 .sidenav a:hover {
-color: #0fdbff;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .toggle-button:hover {

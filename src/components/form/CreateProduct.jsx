@@ -72,7 +72,7 @@ const CreateProduct = () => {
             <label htmlFor="Category" className="my-label-form">
               SELECT CATEGORY
             </label>
-            <ul className="category-list">
+            <ul className="category-list-create">
               {registeredCategories.map((category) => (
                 <li key={category.ID} onClick={() => handleCategoryClick(category.ID)}>
                   {category.Name}

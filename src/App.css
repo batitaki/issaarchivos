@@ -11,7 +11,7 @@
   }
 
   .loading {
-    font-family: "Libre Barcode 39 Text", system-ui;
+    font-family: "Archivo", sans-serif;
     display: flex;
     justify-content:center;
     margin-top: 10vh;

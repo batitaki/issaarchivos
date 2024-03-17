@@ -21,19 +21,6 @@ const Category = () => {
     fetchCategoryAndProducts();
   }, [categoryId]);
 
-  // Fetch categories for CategoryNavbar
-  useEffect(() => {
-    async function fetchCategories() {
-      try {
-        const categoriesData = await getCategory();
-        setCategories(categoriesData);
-      } catch (error) {
-        console.error('Error getting categories', error);
-      }
-    }
-
-    fetchCategories();
-  }, []);
 
   return (
     <>

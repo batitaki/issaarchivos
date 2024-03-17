@@ -1,7 +1,7 @@
 .category {
     display: flex;
     flex-direction: column;
-    font-family: "Bungee Hairline", sans-serif;
+    font-family: "Archivo", sans-serif;
     align-items: center;
     margin-top: 100px;
 }
@@ -17,10 +17,15 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    font-family: "Bungee Hairline", sans-serif;
+    font-family: "Archivo", sans-serif;
     align-items: center;
     padding: 20px 20px;
     list-style: none;
+}
+
+.category-link {
+    color: rgb(7, 24, 70);
+    font-size: 12px;
 }
 
 .category-info-container{
@@ -28,11 +33,12 @@
     justify-content: space-around;
     flex-direction: row;
     margin-bottom: 40px;
-
+    color: rgb(7, 24, 70);
 }
 
 .name-category{
     margin-bottom: 20px;
+
 }
 
 .category-list li.selected {
