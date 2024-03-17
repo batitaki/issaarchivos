@@ -4,6 +4,8 @@ import { getCategory, getProductById } from '../../../services/fetchProducts';
 import { SlideshowLightbox } from 'lightbox.js-react';
 import { useTranslation } from "react-i18next";
 import './ProductDetail.css';
+import PhotoUploader from '../../media/PhotoUploader';
+
 const Product = () => {
   const { id } = useParams();
   const { t } = useTranslation();
@@ -52,6 +54,8 @@ const Product = () => {
             <p className='price'> {t("price")}: {productDetails.Price} USD</p>
             <p className='price'> {productDetails.Description}</p>
             <p className='price'> Category ID: {productDetails.categoryName}</p>
+            {/* Pasar el ID del producto como prop a PhotoUploader */}
+            <PhotoUploader productId={id} />
           </div>
         </div>
       ) : (
