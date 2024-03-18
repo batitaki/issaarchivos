@@ -16,6 +16,7 @@ const Product = () => {
   const [productDetails, setProductDetails] = useState(null);
   const [categoryName, setCategoryName] = useState("");
   const [media, setMedia] = useState([]);
+  const [selectedColor, setSelectedColor] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -37,6 +38,7 @@ const Product = () => {
 
     fetchData();
   }, [id]);
+
   const sliderSettings = {
     dots: false,
     infinite: true,
@@ -52,20 +54,51 @@ const Product = () => {
     },
   };
 
+  const handleColorClick = (color) => {
+    setSelectedColor(color);
+  };
+
+  const allColors = media.reduce((acc, mediaItem) => {
+    mediaItem.Colors.forEach((color) => {
+      if (!acc.includes(color.Name)) {
+        acc.push(color.Name);
+      }
+    });
+    return acc;
+  }, []);
+
+  const filteredMedia = selectedColor
+    ? media.filter((mediaItem) =>
+        mediaItem.Colors.find((color) => color.Name === selectedColor)
+      )
+    : media;
+
   return (
     <>
       <div className="productContent">
         <div className="media-container">
+          <div className="product-colors">
+            <h2>Colors:</h2>
+            <ul>
+              {allColors.map((color, colorIndex) => (
+                <li key={colorIndex} onClick={() => handleColorClick(color)}>
+                  <div
+                    className="color-circle"
+                    style={{ backgroundColor: color }}
+                  ></div>
+                </li>
+              ))}
+            </ul>
+          </div>
           <div className="mediaGallery">
             <Slider {...sliderSettings}>
-              {media.map((image, index) => (
+              {filteredMedia.map((mediaItem, index) => (
                 <div key={index}>
                   <img
-                    src={image.Image}
-                    alt={`Image ${index}`}
+                    src={mediaItem.Image}
+                    alt={`Media ${index}`}
                     style={{ width: "80%", outline: "none" }}
-                  />{" "}
-                  {/* Establece el ancho de la imagen al 100% */}
+                  />
                 </div>
               ))}
             </Slider>
@@ -83,10 +116,9 @@ const Product = () => {
             <div className="info">
               <h1 className="product-title">{productDetails.Name}</h1>
               <p className="price">
-                {" "}
                 {t("price")}: {productDetails.Price} USD
               </p>
-              <p className="price"> {productDetails.Description}</p>
+              <p className="price">{productDetails.Description}</p>
             </div>
             <div className="productImage">
               <SlideshowLightbox className="container grid grid-cols-3 gap-2 mx-auto">
