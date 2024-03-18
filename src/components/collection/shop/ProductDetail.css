@@ -1,17 +1,16 @@
-.productContent {
-    display: flex;
-    justify-content: flex-start;
-    padding-left: 17vw;
-    margin-bottom: 15vw;
-  }
-  
-  .productImage {
-    width: auto; 
-    height: 400px;
-  }
+
   
   .product-content {
-    margin-top: 6vw;
+    width: 100%;
+    outline: none;
+    display: flex;
+    align-items:center ;
+    flex-direction: column;
+
+  }
+
+  .media-container {
+    outline: none;
   }
   
   .info {
@@ -19,18 +18,21 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 7vw;
-    margin-left: 4vw;
-    width: 40vw;
+    width: 90%;
+    height: 20vw;
+    border: 0.8px solid #27343a; /* Cambio aquí */
+    border-radius: 2px;
   }
+  
   
   .price {
     font-family: "Archivo", sans-serif;
     font-size: 1.5vw;
     font-weight: 1;
-    margin-bottom: 10px;
     color: #27343a;
     font-style: bold;
+    width: 80%;
+    margin-top: 10px;
   }
   
   .product-title {
@@ -39,6 +41,7 @@
     font-weight: 1;
     color: #27343a;
     font-style: bold;
+    margin-bottom: 5vh;
   }
   
   .category-name {
@@ -50,4 +53,37 @@
     text-decoration: none;
     display: flex;
     margin-bottom: 1vw
+  }
+
+
+  .photoUploaderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10vh;
+    margin-bottom: 10vw;
+  }
+
+  .slick-slider {
+    cursor: grab; /* Cambiar el cursor a "agarre" cuando se pasa sobre el carrusel */
+    outline: none;
+  }
+  
+  .slick-slider:hover {
+    cursor: grab;
+    outline: none;
+  }
+  
+  .slick-slider:active {
+    cursor: grabbing; /* Cambiar el cursor a "agarrando" cuando se hace clic en el carrusel */
+    outline: none;
+  }
+  
+  .slick-slider:hover:active {
+    cursor: grabbing;
+    outline: none;
+  }
+
+  .productImage {
+      margin-top: 10vh;
   }
