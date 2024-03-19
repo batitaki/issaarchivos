@@ -35,7 +35,8 @@
 }
 
 .sidenav a:hover {
-font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: "Mr De Haviland", cursive;
+  font-size: 30px;
 }
 
 .toggle-button:hover {

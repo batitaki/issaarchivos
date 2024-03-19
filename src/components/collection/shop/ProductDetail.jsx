@@ -78,7 +78,6 @@ const Product = () => {
       <div className="productContent">
         <div className="media-container">
           <div className="product-colors">
-            <h2>Colors:</h2>
             <ul>
               {allColors.map((color, colorIndex) => (
                 <li key={colorIndex} onClick={() => handleColorClick(color)}>
@@ -93,7 +92,7 @@ const Product = () => {
           <div className="mediaGallery">
             <Slider {...sliderSettings}>
               {filteredMedia.map((mediaItem, index) => (
-                <div key={index}>
+                <div className="image-carrousell" key={index}>
                   <img
                     src={mediaItem.Image}
                     alt={`Media ${index}`}
