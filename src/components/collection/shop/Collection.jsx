@@ -40,10 +40,10 @@ const Collection = () => {
 
         <div className="products">
           <div className="columns-container">
-            {products && Array.from({ length: Math.ceil(products.length / 3) }).map((_, columnIndex) => (
+            {products && Array.from({ length: Math.ceil(products.length / 2 ) }).map((_, columnIndex) => (
               <div className="column" key={columnIndex}>
                 {products
-                  .filter((_, index) => index % 3 === columnIndex)
+                  .filter((_, index) => index % 2 === columnIndex)
                   .map((product) => (
                     <Link to={`/product/${product.ID}`} key={product.ID}>
                       <div className="product-container">

@@ -43,13 +43,12 @@ const Product = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 2,
+    slidesToShow: 3,
     slidesToScroll: 1,
     swipeToSlide: true,
     draggable: true,
-    // Estilos personalizados en línea para el slider
     style: {
-      width: "80%", // Ancho del slider
+      width: "100%", // Ancho del slider
       margin: "0 auto", // Centrar el slider
     },
   };
@@ -69,7 +68,7 @@ const Product = () => {
 
   const filteredMedia = selectedColor
     ? media.filter((mediaItem) =>
-        mediaItem.Colors.find((color) => color.Name === selectedColor)
+        mediaItem.Colors.every((color) => color.Name === selectedColor)
       )
     : media;
 
@@ -77,29 +76,22 @@ const Product = () => {
     <>
       <div className="productContent">
         <div className="media-container">
-          <div className="product-colors">
-            <ul>
-              {allColors.map((color, colorIndex) => (
-                <li key={colorIndex} onClick={() => handleColorClick(color)}>
-                  <div
-                    className="color-circle"
-                    style={{ backgroundColor: color }}
-                  ></div>
-                </li>
-              ))}
-            </ul>
-          </div>
           <div className="mediaGallery">
             <Slider {...sliderSettings}>
-              {filteredMedia.map((mediaItem, index) => (
-                <div className="image-carrousell" key={index}>
-                  <img
-                    src={mediaItem.Image}
-                    alt={`Media ${index}`}
-                    style={{ width: "80%", outline: "none" }}
-                  />
-                </div>
-              ))}
+              {filteredMedia.slice(0, 3).map(
+                (
+                  mediaItem,
+                  index // Solo mapea los primeros dos elementos
+                ) => (
+                  <div className="image-carrousell" key={index}>
+                    <img
+                      src={mediaItem.Image}
+                      alt={`Media ${index}`}
+                      style={{ width: "100%", outline: "none" }}
+                    />
+                  </div>
+                )
+              )}
             </Slider>
           </div>
         </div>
@@ -113,7 +105,24 @@ const Product = () => {
             </Link>
             <br />
             <div className="info">
-              <h1 className="product-title">{productDetails.Name}</h1>
+              <div className="product-colors">
+                <ul>
+                  {allColors.map((color, colorIndex) => (
+                    <li
+                      key={colorIndex}
+                      onClick={() => handleColorClick(color)}
+                      style={{ display: "inline-block", marginRight: "5px" }} // Ajuste para mostrar los elementos en línea
+                    >
+                      <div
+                        className="color-circle"
+                        style={{ backgroundColor: color }}
+                      ></div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <p className="product-title">{productDetails.Name}</p>
               <p className="price">
                 {t("price")}: {productDetails.Price} USD
               </p>

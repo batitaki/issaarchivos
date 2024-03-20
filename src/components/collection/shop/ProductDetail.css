@@ -1,102 +1,87 @@
+/* Ajustes CSS */
+.product-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
 
-  
-  .product-content {
-    width: 100%;
-    outline: none;
-    display: flex;
-    align-items:center ;
-    flex-direction: column;
+.media-container {
+  width: 100%;
+}
 
-  }
+.info {
+  width: 99%;
+  height: 40vh;
+  border: 0.8px solid #27343a;
+  padding: 10px;
+}
 
-  .media-container {
-    outline: none;
-  }
-  
-  .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
-    height: 20vw;
-    border: 0.8px solid #27343a; /* Cambio aquí */
-    border-radius: 2px;
-  }
-  
-  
-  .price {
-    font-family: "Archivo", sans-serif;
-    font-size: 1.5vw;
-    font-weight: 1;
-    color: #27343a;
-    font-style: bold;
-    width: 80%;
-    margin-top: 10px;
-  }
-  
-  .product-title {
+.price {
+  font-size: 1vw;
+  width: 100%;
+  margin-bottom: 20px;
+}
 
-    font-family: "Archivo", sans-serif;
-    font-size: 2vh;
-    font-weight: 1;
-    color: #27343a;
-    font-style: bold;
-    margin-bottom: 5vh;
-  }
-  
-  .category-name {
-    font-family: "Archivo", sans-serif;
-    font-size: 20px;
-    font-weight: 1;
-    color: #27343a;
-    font-style: bold;
-    text-decoration: none;
-    display: flex;
-    margin-bottom: 1vw
-  }
+.product-title {
+  margin-top: 20px;
+  font-size: 5vh;
+  margin-bottom: 20px;
+}
 
-  .image-carrousell{
-    outline: none;
-  }
+.productImage {
+  margin-top: 20px;
+}
 
-  .photoUploaderContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 10vh;
-    margin-bottom: 10vw;
-  }
+.product-detail-image{
+  width: 100%;
 
-  .slick-slider {
-    cursor: grab; /* Cambiar el cursor a "agarre" cuando se pasa sobre el carrusel */
-    outline: none;
-  }
-  
-  .slick-slider:hover {
-    cursor: grab;
-    outline: none;
-  }
-  
-  .slick-slider:active {
-    cursor: grabbing; /* Cambiar el cursor a "agarrando" cuando se hace clic en el carrusel */
-    outline: none;
-  }
-  
-  .slick-slider:hover:active {
-    cursor: grabbing;
-    outline: none;
-  }
+}
 
-  .productImage {
-      margin-top: 10vh;
-  }
+.image-carrousell {
+  outline: none;
+}
 
-  .color-circle {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: inline-block;
-    margin-right: 5px; /* Ajusta el margen según sea necesario */
-  }
-  
+.photoUploaderContainer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+slick-slider {
+  cursor: grab; /* Cambiar el cursor a "agarre" cuando se pasa sobre el carrusel */
+  outline: none;
+}
+
+.slick-slider:hover {
+  cursor: grab;
+  outline: none;
+}
+
+.slick-slider:active {
+  cursor: grabbing; /* Cambiar el cursor a "agarrando" cuando se hace clic en el carrusel */
+  outline: none;
+}
+
+.slick-slider:hover:active {
+  cursor: grabbing;
+  outline: none;
+}
+.product-colors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-colors li {
+  list-style: none;
+}
+
+.color-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
