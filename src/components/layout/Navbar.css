@@ -4,7 +4,8 @@
   width: 100%;
   top: 0;
   transition: height 0.5s, padding-top 0.5s;
-  font-family: "Libre Barcode 39 Text", system-ui;
+  color: rgb(7, 24, 70);
+  font-family: "Charis SIL", serif;
   font-weight: 400;
   font-style: normal;
   display: flex;
@@ -31,7 +32,7 @@
   text-decoration: none;
   font-size: 14px;
   color: rgb(7, 24, 70);
-  font-family: "Bungee Hairline", sans-serif;
+  font-family: "Charis SIL", serif;
 }
 
 

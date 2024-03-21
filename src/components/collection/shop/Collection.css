@@ -24,17 +24,17 @@
 }
 
 .title {
-  font-family: "Bungee Hairline", sans-serif;
+  color: rgb(7, 24, 70);
+  font-family: "Charis SIL", serif;
   font-size: 30px;
   font-weight: 1;
-  color: #000000;
   font-style: bold;
   margin-bottom: 20px;
 }
 
 .description {
-  font-family: "Bungee Hairline", sans-serif;
-  color: rgb(0, 0, 0);
+  color: rgb(7, 24, 70);
+  font-family: "Charis SIL", serif;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -43,7 +43,8 @@
 }
 
 .text {
-  font-family: "Bungee Hairline", sans-serif;
+  color: rgb(7, 24, 70);
+  font-family: "Charis SIL", serif;
 }
 
 .product-image {
@@ -65,8 +66,8 @@
   padding: 10px 15px;
   text-decoration: none;
   font-size: 15px;
-  color: rgb(0, 0, 0);
-  font-family: "Bungee Hairline", sans-serif;
+  color: rgb(7, 24, 70);
+  font-family: "Charis SIL", serif;
 }
 
 .categories {

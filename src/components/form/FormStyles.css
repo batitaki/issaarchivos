@@ -4,9 +4,10 @@
   align-items: center;
   justify-content: center;
   margin: 10vh auto; /* Se ajusta automáticamente al centro vertical y horizontal */
-  font-family: "Archivo", sans-serif;
+  color: rgb(7, 24, 70);
+  font-family: "Charis SIL", serif;
   font-style: normal;
-  border: 0.5px solid #000000;
+  border: 0.5px solid rgb(7, 24, 70);
   width: 90%; /* Se ajusta al 90% del ancho del contenedor padre */
   max-width: 600px; /* Máximo ancho de 600px */
   box-sizing: border-box;
@@ -20,8 +21,8 @@
 .form-title {
   display: block;
   margin-bottom: 5px;
-  font-family: "Archivo", sans-serif;
-  color: #000000ce;
+  color: rgb(7, 24, 70);
+  font-family: "Charis SIL", serif;
   font-size: 1.5em; /* Tamaño de fuente relativo */
 }
 
@@ -29,29 +30,29 @@
 .my-textarea-form {
   width: 100%; /* Ancho completo del contenedor */
   max-width: 100%; /* Ancho máximo del contenedor */
-  background-color: #65e0ff;
   border: 0.5px solid #000000;
   padding: 5px;
   outline: none;
   border-radius: 2px;
   margin-bottom: 15px;
   box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
-  font-family: "Archivo", sans-serif;
+  color: rgb(7, 24, 70);
+  font-family: "Charis SIL", serif;
 }
 
 /* Estilos para el select */
 .my-select-form {
   width: 100%;
   max-width: 100%;
-  background-color: #4be7ff;
-  border: 0.5px solid #000000;
+  background-color: rgb(7, 24, 70);
+  border: 0.5px solidrgb(7, 24, 70);
   padding: 5px;
   outline: none;
   border-radius: 2px;
   margin-bottom: 15px;
   box-sizing: border-box;
-  font-family: "Archivo", sans-serif;
-  color: #000000ce; /* Color del texto del select */
+  color: rgb(7, 24, 70);
+  font-family: "Charis SIL", serif;
 }
 
 /* Estilos para el contenedor del select */
@@ -67,8 +68,8 @@
   right: 0;
   bottom: 0;
   padding: 5px;
-  font-family: "Archivo", sans-serif;
-  color: #000000ce; /* Color del texto del select */
+  color: rgb(7, 24, 70);
+  font-family: "Charis SIL", serif;
   pointer-events: none; /* Evita la interacción del usuario con el texto */
   z-index: 1; /* Asegura que el texto esté sobre el select */
 }
@@ -78,14 +79,14 @@
 .my-link-form {
   width: 100%;
   margin-top: 2vw;
-  color: #000000ce;
+  color: rgb(7, 24, 70);
+  font-family: "Charis SIL", serif;
   background-color: #4be7ff;
   border: 0.5px solid #000000;
   text-decoration: none;
   text-align: center;
   padding: 10px;
   border-radius: 2px;
-  font-family: "Archivo", sans-serif;
 }
 
 .category-list-create li {
