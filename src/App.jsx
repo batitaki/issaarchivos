@@ -9,6 +9,7 @@ import Category from './components/collection/categories/Category'; // Importa e
 import './App.css';
 import BackgroundSketch from './components/layout/BackgroundSketch';
 import Fan from './components/collection/sketch/Fan';
+import Cart from './components/collection/cart/Cart';
 
 function App() {
   return (
@@ -22,7 +23,8 @@ function App() {
           <Route path="/shop" element={<Collection />} />
           <Route path="/createProduct" element={<CreateProduct />} />
           <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/category/:categoryId" element={<Category />} /> {/* Agrega la nueva ruta para Category */}
+          <Route path="/category/:categoryId" element={<Category />} /> 
+          <Route path="/cart" element = {<Cart/>}/>
         </Routes>
       </Router>
     </div>

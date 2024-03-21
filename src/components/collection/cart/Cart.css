@@ -1,0 +1,100 @@
+.cart {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    font-family: "Charis SIL", serif;
+  }
+  
+  .cart-titles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Distribuye los elementos horizontalmente */
+    width: 60%; /* Reducir el ancho para evitar que los elementos se extiendan demasiado */
+    padding: 0 10px; /* Agregar relleno para separar del borde */
+    font-family: "Charis SIL", serif;
+  }
+  
+  .cart-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; 
+    align-items: center; /* Alinear verticalmente los elementos */
+    width: 60%; /* Reducir el ancho para evitar que los elementos se extiendan demasiado */
+    font-family: "Charis SIL", serif;
+  }
+  
+  .title {
+    color: rgb(7, 24, 70);
+    font-family: "Charis SIL", serif;
+    font-size: 1vw;
+  }
+
+  .item-container {
+    width: 100px; /* Ancho fijo para contenedor de imagen */
+    height: 100px; /* Altura fija para contenedor de imagen */
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+  }
+  
+  .item {
+    color: rgb(7, 24, 70);
+    font-family: "Charis SIL", serif;
+    font-size: 1vw;
+  }
+
+  .item-price {
+    color: rgb(7, 24, 70);
+    font-family: "Charis SIL", serif;
+    font-size: 1vw;
+    margin-right: 4vw;
+  }
+  
+  .decrement-increment {
+    background-color: white;
+    border: none;
+    padding: 2px;
+    color: rgb(7, 24, 70);
+    font-family: "Charis SIL", serif;
+    font-size: 1vw;
+   }
+
+   .decrement {
+    margin-right: 4.5vw;
+   }
+
+  .separator {
+    width: 60%;
+    border-bottom: 1px solid #ccc;
+    margin: 10px 0;
+    color: rgb(7, 24, 70);
+  }
+  
+  .subtotal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 60%;
+    padding: 10px 0;
+    color: rgb(7, 24, 70);
+    font-family: "Charis SIL", serif;
+  }
+
+  .item-final-price {
+    display: block;
+    margin-right: 1vw;
+    color: rgb(7, 24, 70);
+    font-family: "Charis SIL", serif;
+    font-size: 1vw;
+  }
+  
+  .subtotal .title {
+    font-size: 15px;
+    color: rgb(7, 24, 70);
+    font-family: "Charis SIL", serif;
+    font-size: 1vw;
+  }
+  

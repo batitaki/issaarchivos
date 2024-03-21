@@ -18,8 +18,9 @@ const Navbar = () => {
     <div className="sidenav">
       <div className='nav-options-container'>
         <div className='nav-options'>
-          <Link className='nav-link' to="/">Home</Link>
           <Link className='nav-link' to="/shop">Shop</Link>
+          <Link className='nav-link' to="/">Collections</Link>
+          <Link className='nav-link' to="/createProduct">Projects and Collaborations</Link>
           <Link className='nav-link' to="/createProduct">About</Link>
         </div>
       </div>

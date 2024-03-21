@@ -72,6 +72,18 @@ const Product = () => {
       )
     : media;
 
+    const addToCart = () => {
+      const cartItem = {
+        productDetails,
+        selectedColor,
+        selectedSize: "", // Aquí necesitarías incluir el tamaño seleccionado si lo tienes
+        quantity: 1,
+      };
+      const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
+      localStorage.setItem("cart", JSON.stringify([...existingCart, cartItem]));
+      alert("Product added to cart!");
+    };
+
   return (
     <>
       <div className="productContent">
@@ -105,6 +117,7 @@ const Product = () => {
             </Link>
             <br />
             <div className="info">
+            <button className="add-to-cart" onClick={addToCart}>Add to Cart</button>
               <div className="product-colors">
                 <ul>
                   {allColors.map((color, colorIndex) => (
@@ -121,12 +134,22 @@ const Product = () => {
                   ))}
                 </ul>
               </div>
-
               <p className="product-title">{productDetails.Name}</p>
               <p className="price">
                 {t("price")}: {productDetails.Price} USD
               </p>
-              <p className="price">{productDetails.Description}</p>
+              <p className="product-description">{productDetails.Description}</p>
+
+              <div className="sizes-container">
+                <h4>sizes:</h4>
+                <ul>
+                  {productDetails &&
+                    productDetails.Sizes &&
+                    productDetails.Sizes.map((size, index) => (
+                      <li key={index}>{size.Name}</li>
+                    ))}
+                </ul>
+              </div>
             </div>
             <div className="productImage">
               <SlideshowLightbox className="container grid grid-cols-3 gap-2 mx-auto">
