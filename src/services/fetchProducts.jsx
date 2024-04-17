@@ -1,7 +1,7 @@
 export const getProducts = async () => {
   try {
     const productsAwnser = await fetch(
-      "http://localhost:3002/products/products"
+      "https://issaarchivos-backend.onrender.com/products/products"
     );
     const data = await productsAwnser.json();
     return data;
@@ -14,7 +14,7 @@ export const getProducts = async () => {
 export const createProduct = async (formData) => {
   try {
     const response = await fetch(
-      "http://localhost:3002/products/createProduct",
+      "https://issaarchivos-backend.onrender.com/products/createProduct",
       {
         method: "POST",
         body: formData,
@@ -50,7 +50,7 @@ export const getCategory = async () => {
 
 export const getProductById = async (productId) => {
   try {
-    const response = await fetch(`http://localhost:3002/products/products/${productId}`); 
+    const response = await fetch(`https://issaarchivos-backend.onrender.com/products/products/${productId}`); 
     const data = await response.json();
     return data;
   } catch (error) {
@@ -61,7 +61,7 @@ export const getProductById = async (productId) => {
 
 export const getProductsByCategory = async (categoryId) => {
   try {
-    const response = await fetch(`http://localhost:3002/products/byCategory/${categoryId}`);
+    const response = await fetch(`https://issaarchivos-backend.onrender.com/products/byCategory/${categoryId}`);
     const data = await response.json();
     return data;
   } catch (error) {
@@ -72,7 +72,7 @@ export const getProductsByCategory = async (categoryId) => {
 
 export const getCategoryById = async (categoryId) => {
   try {
-    const response = await fetch(`http://localhost:3002/products/category/${categoryId}`);
+    const response = await fetch(`https://issaarchivos-backend.onrender.com/products/category/${categoryId}`);
     const data = await response.json();
     return data;
   } catch (error) {

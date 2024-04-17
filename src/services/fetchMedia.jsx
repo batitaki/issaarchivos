@@ -1,6 +1,6 @@
 const fetchMedia = async () => {
     try {
-      const response = await fetch("http://localhost:3002/media/media");
+      const response = await fetch("https://issaarchivos-backend.onrender.com/media/media");
       if (!response.ok) {
         throw new Error("Error fetching media");
       }
@@ -16,7 +16,7 @@ const fetchMedia = async () => {
   const getMediaByProduct = async (productId) => {
     try {
       const response = await fetch(
-        `http://localhost:3002/media/byProduct/${productId}`
+        `https://issaarchivos-backend.onrender.com/media/byProduct/${productId}`
       );
       const data = await response.json();
       return data;
@@ -31,7 +31,7 @@ const fetchMedia = async () => {
   
   const uploadMedia = async (formDataWithFile) => {
     try {
-      const response = await fetch("http://localhost:3002/media/upload", {
+      const response = await fetch("https://issaarchivos-backend.onrender.com/media/upload", {
         method: "POST",
         body: formDataWithFile,
       });
@@ -52,7 +52,7 @@ const fetchMedia = async () => {
 
   const getColors = async () => {
     try {
-      const response = await fetch('http://localhost:3002/media/colors');
+      const response = await fetch('https://issaarchivos-backend.onrender.com/media/colors');
       if (!response.ok) {
         throw new Error('Error fetching colors');
       }
@@ -66,7 +66,7 @@ const fetchMedia = async () => {
 
   const createColor = async (colorName) => {
     try {
-      const response = await fetch('http://localhost:3002/media/color', {
+      const response = await fetch('https://issaarchivos-backend.onrender.com/media/color', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
