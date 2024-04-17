@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom'; 
 import { getCategory } from '../../services/fetchProducts'; // Importar getCategory
+
 import './Navbar.css';
 
 const Navbar = () => {
@@ -16,7 +17,8 @@ const Navbar = () => {
 
   return (
     <div className="sidenav">
-      <div className='nav-options-container'>
+      <div className='nav-container'>
+        <Link className='nav-logo' to="/issaarchivos/">AIM</Link>
         <div className='nav-options'>
           <Link className='nav-link' to="/shop">Shop</Link>
           <Link className='nav-link' to="/">Collections</Link>

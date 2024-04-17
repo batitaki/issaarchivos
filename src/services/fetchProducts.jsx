@@ -37,7 +37,7 @@ export const createProduct = async (formData) => {
 export const getCategory = async () => {
   try {
     const categoryResponse = await fetch(
-      "http://localhost:3002/products/category"
+      "https://issaarchivos-backend.onrender.com/products/category"
     );
     const data = await categoryResponse.json();
     return data;
