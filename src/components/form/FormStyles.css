@@ -3,16 +3,16 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 10vh auto; /* Se ajusta automáticamente al centro vertical y horizontal */
+  margin: 10vh auto; 
   color: rgb(7, 24, 70);
   font-family: "Charis SIL", serif;
   font-style: normal;
   border: 0.5px solid rgb(7, 24, 70);
-  width: 90%; /* Se ajusta al 90% del ancho del contenedor padre */
-  max-width: 600px; /* Máximo ancho de 600px */
+  width: 90%; 
+  max-width: 600px; 
   box-sizing: border-box;
   border-radius: 2px;
-  padding: 5%; /* Se ajusta al 5% del ancho del contenedor */
+  padding: 5%; 
   background-color: rgb(255, 255, 255);
   opacity: 0.8;
 }
@@ -23,24 +23,23 @@
   margin-bottom: 5px;
   color: rgb(7, 24, 70);
   font-family: "Charis SIL", serif;
-  font-size: 1.5em; /* Tamaño de fuente relativo */
+  font-size: 1.5em; 
 }
 
 .my-input-form,
 .my-textarea-form {
-  width: 100%; /* Ancho completo del contenedor */
-  max-width: 100%; /* Ancho máximo del contenedor */
+  width: 100%; 
+  max-width: 100%; 
   border: 0.5px solid #000000;
   padding: 5px;
   outline: none;
   border-radius: 2px;
   margin-bottom: 15px;
-  box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+  box-sizing: border-box;
   color: rgb(7, 24, 70);
   font-family: "Charis SIL", serif;
 }
 
-/* Estilos para el select */
 .my-select-form {
   width: 100%;
   max-width: 100%;
@@ -55,12 +54,10 @@
   font-family: "Charis SIL", serif;
 }
 
-/* Estilos para el contenedor del select */
 .my-select-container {
   position: relative;
 }
 
-/* Estilos para el contenedor del texto del select */
 .my-select-container span {
   position: absolute;
   top: 0;
@@ -70,10 +67,9 @@
   padding: 5px;
   color: rgb(7, 24, 70);
   font-family: "Charis SIL", serif;
-  pointer-events: none; /* Evita la interacción del usuario con el texto */
-  z-index: 1; /* Asegura que el texto esté sobre el select */
+  pointer-events: none;
+  z-index: 1; 
 }
-
 
 .my-button-form,
 .my-link-form {
@@ -81,8 +77,8 @@
   margin-top: 2vw;
   color: rgb(7, 24, 70);
   font-family: "Charis SIL", serif;
-  background-color: #4be7ff;
-  border: 0.5px solid #000000;
+  background-color: #ffffff;
+  border: none;
   text-decoration: none;
   text-align: center;
   padding: 10px;
@@ -103,7 +99,7 @@
 @media (max-width: 768px) {
   .my-label-form,
   .form-title {
-    font-size: 18px; /* Tamaño de fuente fijo */
+    font-size: 18px; 
   }
 
   .my-button-form,
@@ -112,6 +108,6 @@
   }
 
   .my-container-register {
-    width: 90%; /* Reducción del ancho en dispositivos pequeños */
+    width: 90%; 
   }
 }

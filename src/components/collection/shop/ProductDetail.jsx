@@ -89,10 +89,10 @@ const Product = () => {
         <div className="media-container">
           <div className="mediaGallery">
             <Slider {...sliderSettings}>
-              {filteredMedia.slice(0, 3).map(
+              {filteredMedia.slice(0, 6).map(
                 (
                   mediaItem,
-                  index // Solo mapea los primeros dos elementos
+                  index
                 ) => (
                   <div className="image-carrousell" key={index}>
                     <img
@@ -144,7 +144,7 @@ const Product = () => {
               </p>
 
               <div className="sizes-container">
-                <h4>sizes:</h4>
+                <h4 className="price">sizes:</h4>
                 <ul>
                   {productDetails &&
                     productDetails.Sizes &&

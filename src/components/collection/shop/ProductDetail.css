@@ -9,6 +9,32 @@
   font-family: "Charis SIL", serif;
 }
 
+.mediaGallery {
+  position: relative;
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+  /* Ajusta la altura si es necesario */
+}
+.scrollbar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 10px; /* Altura de la barra de desplazamiento */
+  background-color: #ddd; /* Color de fondo de la barra de desplazamiento */
+}
+
+.scrollbar-thumb {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 20%; /* Ajusta el ancho según tus preferencias */
+  height: 100%;
+  background-color: #888; /* Color del 'pulgar' de la barra de desplazamiento */
+  cursor: pointer;
+  z-index: 1; /* Asegúrate de que la barra esté por encima del contenido */
+}
 .media-container {
   width: 100%;
 }
@@ -108,10 +134,10 @@ slick-slider {
 }
 
 .add-to-cart{
-  color: rgb(255, 255, 255);
+  color: rgb(7, 24, 70);
   font-family: "Charis SIL", serif;
-  font-size: 1vw;
+  font-size: 1.5vw;
   padding: 5px;
+  background-color:rgb(255, 255, 255);
   border: none;
-  background-color:rgb(7, 24, 70);
 }
