@@ -14,6 +14,7 @@ import Cart from './components/collection/cart/Cart';
 function App() {
   return (
     <div>
+      < BackgroundSketch />
       <Router>
     
         <Navbar />

@@ -11,9 +11,19 @@
     margin-top: 10vh;
   }
 
-  .loading {
-    font-family: "Archivo", sans-serif;
-    display: flex;
-    justify-content:center;
-    margin-top: 10vh;
-  }
+/* Agrega estas reglas de estilo a tu archivo Collection.css */
+
+.loading {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  font-family: "Charis SIL", serif;
+  display: flex;
+  justify-content: center;
+  color: rgb(7, 24, 70);
+  animation: spin 1s linear infinite; /* Agrega una animación llamada 'spin' */
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); } /* Define la transformación inicial */
+  100% { transform: rotate(360deg); } /* Define la transformación final */
+}

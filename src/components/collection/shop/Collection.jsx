@@ -7,6 +7,7 @@ import CategoryNavbar from '../categories/CategoryNavbar';
 const Collection = () => {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [loading, setLoading] = useState(true); // Estado para controlar la carga
 
   useEffect(() => {
     const fetchProductsData = async () => {
@@ -15,6 +16,8 @@ const Collection = () => {
         setProducts(productsData);
       } catch (error) {
         console.error('Error getting products', error);
+      } finally {
+        setLoading(false); // Indicar que la carga ha finalizado
       }
     };
 
@@ -24,8 +27,9 @@ const Collection = () => {
         setCategories(categoriesData);
       } catch (error) {
         console.error('Error getting categories', error);
+      } finally {
+        setLoading(false); // Indicar que la carga ha finalizado
       }
-
     };
 
     fetchProductsData();
@@ -35,28 +39,31 @@ const Collection = () => {
   return (
     <>
       <div className="collection-container">
-        
-                   <CategoryNavbar categories={categories} /> 
+        <CategoryNavbar categories={categories} />
 
-        <div className="products">
-          <div className="columns-container">
-            {products && Array.from({ length: Math.ceil(products.length / 4 ) }).map((_, columnIndex) => (
-              <div className="column" key={columnIndex}>
-                {products
-                  .filter((_, index) => index % 4 === columnIndex)
-                  .map((product) => (
-                    <Link to={`/product/${product.ID}`} key={product.ID}>
-                      <div className="product-container">
-                        <div className="product">
-                          <img className="product-image" src={product.Image} alt={product.Title} />
+        {loading ? ( // Si está cargando, muestra un mensaje de carga
+          <div className="loading">Loading...</div>
+        ) : (
+          <div className="products">
+            <div className="columns-container">
+              {products && Array.from({ length: Math.ceil(products.length / 4) }).map((_, columnIndex) => (
+                <div className="column" key={columnIndex}>
+                  {products
+                    .filter((_, index) => index % 4 === columnIndex)
+                    .map((product) => (
+                      <Link to={`/product/${product.ID}`} key={product.ID}>
+                        <div className="product-container">
+                          <div className="product">
+                            <img className="product-image" src={product.Image} alt={product.Title} />
+                          </div>
                         </div>
-                      </div>
-                    </Link>
-                  ))}
-              </div>
-            ))}
+                      </Link>
+                    ))}
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </>
   );

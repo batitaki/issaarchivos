@@ -60,7 +60,7 @@ const BackgroundSketch = () => {
       this.maxSpeed = 3;
       this.maxForce = 0.05;
       this.particleImg = particleImg; // Usar la imagen cargada
-      this.radius = p5.random(2, 10); // Tamaño aleatorio
+      this.radius = p5.random(4, 10); // Tamaño aleatorio
       this.alpha = 255; // Opacidad inicial
       // Carga de la imagen de la partícula
       this.particleImg = p5.loadImage(particleImage);
@@ -81,7 +81,7 @@ display(p5) {
   // Calculate aspect ratio
   const aspectRatio = this.particleImg.width / this.particleImg.height;
   // Calculate width and height based on radius and aspect ratio
-  const width = this.radius * 2;
+  const width = this.radius * 3;
   const height = width / aspectRatio;
   
   // Draw the image of the particle with opacity
