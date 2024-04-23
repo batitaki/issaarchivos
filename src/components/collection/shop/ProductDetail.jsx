@@ -4,7 +4,6 @@ import { getCategory, getProductById } from "../../../services/fetchProducts";
 import { getMediaByProduct } from "../../../services/fetchMedia";
 import { useTranslation } from "react-i18next";
 import "./ProductDetail.css";
-import PhotoUploader from "../../media/PhotoUploader";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -189,9 +188,7 @@ const Product = () => {
           <p className="loading">LOADING...</p>
         )}
       </div>
-      <div className="photoUploaderContainer">
-        <PhotoUploader productId={id} />
-      </div>
+
     </>
   );
 };

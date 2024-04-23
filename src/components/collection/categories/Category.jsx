@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { getCategoryById, getProductsByCategory } from '../../../services/fetchProducts';
 import './Category.css';
 import CategoryNavbar from './CategoryNavbar';
@@ -36,7 +36,9 @@ const Category = () => {
                   .map((product) => (
                     <div className="product-container" key={product.ID}>
                       <div className="product">
-                        <img className="product-image" src={product.Image} alt={product.Title} />
+                      <Link to={`/issaarchivos/product/${product.ID}`}>
+                          <img className="product-image" src={product.Image} alt={product.Title} />
+                        </Link>
                       </div>
                     </div>
                   ))}

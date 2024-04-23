@@ -13,7 +13,7 @@ export default () => {
   };
 
   const draw = (p5) => {
-    p5.background(250, 255, 240);
+    p5.background(250, 255, 250);
     p5.noFill();
 
     p5.translate(p5.width / 2, p5.height / 2);
