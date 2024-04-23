@@ -12,10 +12,13 @@ import "slick-carousel/slick/slick-theme.css";
 const Product = () => {
   const { id } = useParams();
   const { t } = useTranslation();
+  const [loading, setLoading] = useState(true);
   const [productDetails, setProductDetails] = useState(null);
   const [categoryName, setCategoryName] = useState("");
   const [media, setMedia] = useState([]);
   const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedSize, setSelectedSize] = useState(null);
+  const [selectedMedia, setSelectedMedia] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,6 +33,7 @@ const Product = () => {
 
         const mediaData = await getMediaByProduct(id);
         setMedia(mediaData);
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching product details:", error);
       }
@@ -47,19 +51,24 @@ const Product = () => {
     swipeToSlide: true,
     draggable: true,
     style: {
-      width: "100%", // Ancho del slider
-      margin: "0 auto", // Centrar el slider
+      width: "100%",
+      margin: "0 auto",
     },
   };
 
-  const handleColorClick = (color) => {
+  const handleColorClick = (color, media) => {
     setSelectedColor(color);
+    setSelectedMedia(media);
+  };
+
+  const handleSizeSelect = (size) => {
+    setSelectedSize(size);
   };
 
   const allColors = media.reduce((acc, mediaItem) => {
     mediaItem.Colors.forEach((color) => {
-      if (!acc.includes(color.Name)) {
-        acc.push(color.Name);
+      if (!acc.some((item) => item.name === color.Name)) {
+        acc.push({ name: color.Name, media: mediaItem.Image });
       }
     });
     return acc;
@@ -67,7 +76,7 @@ const Product = () => {
 
   const filteredMedia = selectedColor
     ? media.filter((mediaItem) =>
-        mediaItem.Colors.every((color) => color.Name === selectedColor)
+        mediaItem.Colors.some((color) => color.Name === selectedColor)
       )
     : media;
 
@@ -75,7 +84,8 @@ const Product = () => {
     const cartItem = {
       productDetails,
       selectedColor,
-      selectedSize: "", // Aquí necesitarías incluir el tamaño seleccionado si lo tienes
+      selectedSize,
+      selectedMedia,
       quantity: 1,
     };
     const existingCart = JSON.parse(localStorage.getItem("cart")) || [];
@@ -83,26 +93,25 @@ const Product = () => {
     alert("Product added to cart!");
   };
 
+  if (loading) {
+    return <p className="loading">LOADING...</p>;
+  }
+
   return (
     <>
       <div className="productContent">
         <div className="media-container">
           <div className="mediaGallery">
             <Slider {...sliderSettings}>
-              {filteredMedia.slice(0, 6).map(
-                (
-                  mediaItem,
-                  index
-                ) => (
-                  <div className="image-carrousell" key={index}>
-                    <img
-                      src={mediaItem.Image}
-                      alt={`Media ${index}`}
-                      style={{ width: "100%", outline: "none" }}
-                    />
-                  </div>
-                )
-              )}
+              {filteredMedia.slice(0, 6).map((mediaItem, index) => (
+                <div className="image-carrousell" key={index}>
+                  <img
+                    src={mediaItem.Image}
+                    alt={`Media ${index}`}
+                    style={{ width: "100%", outline: "none" }}
+                  />
+                </div>
+              ))}
             </Slider>
           </div>
         </div>
@@ -117,23 +126,46 @@ const Product = () => {
             <br />
             <div className="info">
               <button className="add-to-cart" onClick={addToCart}>
-                Add to Cart
+                Add to Bag
               </button>
               <div className="product-colors">
                 <ul>
                   {allColors.map((color, colorIndex) => (
                     <li
                       key={colorIndex}
-                      onClick={() => handleColorClick(color)}
-                      style={{ display: "inline-block", marginRight: "5px" }} // Ajuste para mostrar los elementos en línea
+                      onClick={() => handleColorClick(color.name, color.media)}
+                      style={{
+                        display: "inline-block",
+                        marginRight: "5px",
+                      }}
                     >
                       <div
-                        className="color-circle"
-                        style={{ backgroundColor: color }}
+                        className={`color-circle ${
+                          selectedColor === color.name ? "selected" : ""
+                        }`}
+                        style={{ backgroundColor: color.name }}
                       ></div>
                     </li>
                   ))}
                 </ul>
+              </div>
+              <div className="sizes-container">
+                <h4 className="price">Sizes:</h4>
+                <div className="size-options">
+                  {productDetails &&
+                    productDetails.Sizes &&
+                    productDetails.Sizes.map((size, index) => (
+                      <div
+                        key={index}
+                        className={`size-option${
+                          selectedSize === size.Name ? " selected" : ""
+                        }`}
+                        onClick={() => handleSizeSelect(size.Name)}
+                      >
+                        {size.Name}
+                      </div>
+                    ))}
+                </div>
               </div>
               <p className="product-title">{productDetails.Name}</p>
               <p className="price">
@@ -142,27 +174,15 @@ const Product = () => {
               <p className="product-description">
                 {productDetails.Description}
               </p>
-
-              <div className="sizes-container">
-                <h4 className="price">sizes:</h4>
-                <ul>
-                  {productDetails &&
-                    productDetails.Sizes &&
-                    productDetails.Sizes.map((size, index) => (
-                      <li key={index}>{size.Name}</li>
-                    ))}
-                </ul>
-              </div>
             </div>
             <div className="productImage">
-       
-                {filteredMedia.length > 0 && (
-                  <img
-                    className="product-detail-image"
-                    src={filteredMedia[0].Image}
-                    alt={productDetails.Name}
-                  />
-                )}
+              {selectedMedia && (
+                <img
+                  className="product-detail-image"
+                  src={selectedMedia}
+                  alt={productDetails.Name}
+                />
+              )}
             </div>
           </div>
         ) : (

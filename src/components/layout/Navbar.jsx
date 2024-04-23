@@ -20,10 +20,10 @@ const Navbar = () => {
       <div className='nav-container'>
         <Link className='nav-logo' to="/issaarchivos/">AIM</Link>
         <div className='nav-options'>
-          <Link className='nav-link' to="/shop">Shop</Link>
-          <Link className='nav-link' to="/">Collections</Link>
-          <Link className='nav-link' to="/createProduct">Projects and Collaborations</Link>
-          <Link className='nav-link' to="/createProduct">About</Link>
+          <Link className='nav-link' to="/issaarchivos/shop">Shop</Link>
+          <Link className='nav-link' to="/issaarchivos/">Collections</Link>
+          <Link className='nav-link' to="/issaarchivos/createProduct">Projects and Collaborations</Link>
+          <Link className='nav-link' to="/issaarchivos/cart">Bag</Link>
         </div>
       </div>
     </div>

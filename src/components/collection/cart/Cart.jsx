@@ -37,6 +37,8 @@ const Cart = () => {
         <p className="title"> Price </p>
         <p className="title"> Quantity </p>
         <p className="title"> Total </p>
+        <p className="title"> Color </p>
+        <p className="title"> Size </p>
       </div>
 
       <div className="separator" />
@@ -46,7 +48,7 @@ const Cart = () => {
           <div className="item-container">
             <img
               className="item"
-              src={item.productDetails.Image}
+              src={item.selectedMedia}
               alt={item.productDetails.Name}
             />
           </div>
@@ -56,7 +58,7 @@ const Cart = () => {
               className="decrement-increment"
               onClick={() => handleDecrement(index)}
             >
-              - 
+              -
             </button>
             <span className="decrement-increment">{item.quantity}</span>
             <button
@@ -66,7 +68,14 @@ const Cart = () => {
               +
             </button>
           </div>
-          <p className="item-final-price"> {item.productDetails.Price} </p>
+          <div className="color-circle" style={{ backgroundColor: item.selectedColor }}></div>
+          <p className="item-final-price">
+            {" "}
+            {item.productDetails.Price * item.quantity}{" "}
+          </p>
+          <p className="item-size">
+            {item.selectedSize && `Size: ${item.selectedSize}`}
+          </p>
         </div>
       ))}
       <div className="separator" />

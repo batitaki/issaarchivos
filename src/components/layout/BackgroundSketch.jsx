@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Sketch from "react-p5";
-import particleImage from "../../assets/azul.png";
+import particleImage from "../../assets/horse.png";
 
 const BackgroundSketch = () => {
   const [particles, setParticles] = useState([]);
@@ -81,7 +81,7 @@ display(p5) {
   // Calculate aspect ratio
   const aspectRatio = this.particleImg.width / this.particleImg.height;
   // Calculate width and height based on radius and aspect ratio
-  const width = this.radius * 3;
+  const width = this.radius * 7;
   const height = width / aspectRatio;
   
   // Draw the image of the particle with opacity

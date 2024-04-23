@@ -25,7 +25,7 @@ const CategoryNavbar = () => {
       <ul className='category-list'>
         {categories.map(category => (
           <li key={category.ID} className={location.pathname === `/category/${category.ID}` ? 'selected' : ''}>
-            <Link className='category-link' to={`/category/${category.ID}`}>
+            <Link className='category-link' to={`/issaarchivos/category/${category.ID}`}>
               {category.Name}
             </Link>
           </li>

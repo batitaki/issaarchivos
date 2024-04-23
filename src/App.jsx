@@ -14,18 +14,18 @@ import Cart from './components/collection/cart/Cart';
 function App() {
   return (
     <div>
-      < BackgroundSketch />
+
       <Router>
     
         <Navbar />
         <Routes>
           <Route path="/issaarchivos/" element={<Home />} />
-          <Route path="/fan" element={<Fan />} />
-          <Route path="/shop" element={<Collection />} />
-          <Route path="/createProduct" element={<CreateProduct />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/category/:categoryId" element={<Category />} /> 
-          <Route path="/cart" element = {<Cart/>}/>
+          <Route path="/issaarchivos/fan" element={<Fan />} />
+          <Route path="/issaarchivos/shop" element={<Collection />} />
+          <Route path="/issaarchivos/createProduct" element={<CreateProduct />} />
+          <Route path="/issaarchivos/product/:id" element={<ProductDetail />} />
+          <Route path="/issaarchivos/category/:categoryId" element={<Category />} /> 
+          <Route path="/issaarchivos/cart" element = {<Cart/>}/>
         </Routes>
       </Router>
     </div>
