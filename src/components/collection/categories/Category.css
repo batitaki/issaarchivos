@@ -45,9 +45,8 @@
 }
 
 .category-list li.selected {
-    margin-top: -20px; /* Mueve la opción seleccionada hacia arriba 5px */
+    margin-top: -2px; /* Mueve la opción seleccionada hacia arriba 2px */
     /* Agrega cualquier otro estilo deseado para la opción seleccionada */
     text-decoration:underline;
     text-decoration-thickness: 0.2px; 
   }
-  

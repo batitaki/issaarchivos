@@ -7,6 +7,7 @@ import "./ProductDetail.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import PhotoUploader from "../../media/PhotoUploader";
 
 const Product = () => {
   const { id } = useParams();
@@ -174,21 +175,12 @@ const Product = () => {
                 {productDetails.Description}
               </p>
             </div>
-            <div className="productImage">
-              {selectedMedia && (
-                <img
-                  className="product-detail-image"
-                  src={selectedMedia}
-                  alt={productDetails.Name}
-                />
-              )}
-            </div>
           </div>
         ) : (
           <p className="loading">LOADING...</p>
         )}
       </div>
-
+      <PhotoUploader productId={id} />
     </>
   );
 };

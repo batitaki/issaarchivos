@@ -36,9 +36,9 @@ const Cart = () => {
         <p className="title"> Product </p>
         <p className="title"> Price </p>
         <p className="title"> Quantity </p>
-        <p className="title"> Total </p>
         <p className="title"> Color </p>
         <p className="title"> Size </p>
+        <p className="title"> Total </p>
       </div>
 
       <div className="separator" />
@@ -69,12 +69,12 @@ const Cart = () => {
             </button>
           </div>
           <div className="color-circle" style={{ backgroundColor: item.selectedColor }}></div>
+          <p className="item-size">
+            {item.selectedSize && `Size: ${item.selectedSize}`}
+          </p>
           <p className="item-final-price">
             {" "}
             {item.productDetails.Price * item.quantity}{" "}
-          </p>
-          <p className="item-size">
-            {item.selectedSize && `Size: ${item.selectedSize}`}
           </p>
         </div>
       ))}
