@@ -8,6 +8,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import PhotoUploader from "../../media/PhotoUploader";
+import { useAuth } from '../../user/Login'; // Corregimos la importación
+import { Navigate } from 'react-router-dom';
 
 const Product = () => {
   const { id } = useParams();
@@ -19,6 +21,7 @@ const Product = () => {
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedMedia, setSelectedMedia] = useState(null);
+  const { loggedIn } = useAuth(); // Obtenemos el estado de autenticación desde el contexto
 
   useEffect(() => {
     const fetchData = async () => {
@@ -180,7 +183,7 @@ const Product = () => {
           <p className="loading">LOADING...</p>
         )}
       </div>
-      <PhotoUploader productId={id} />
+      {loggedIn && <PhotoUploader productId={id} />} {/* Mostramos el PhotoUploader solo si el usuario está autenticado */}
     </>
   );
 };

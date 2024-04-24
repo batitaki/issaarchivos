@@ -1,11 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createContext, useContext } from 'react';
 import { loginUser } from '../../services/fetchUsers';
 import { Navigate } from 'react-router-dom';
 
-const Login = () => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState(null);
+const AuthContext = createContext();
+
+export const useAuth = () => {
+  return useContext(AuthContext);
+};
+
+export const AuthProvider = ({ children }) => {
   const [loggedIn, setLoggedIn] = useState(false);
 
   useEffect(() => {
@@ -15,7 +18,7 @@ const Login = () => {
     }
   }, []);
 
-  const handleLogin = async () => {
+  const login = async (username, password, setError) => {
     try {
       const response = await loginUser(username, password);
       localStorage.setItem('currentUser', JSON.stringify(response.user));
@@ -23,6 +26,28 @@ const Login = () => {
     } catch (error) {
       setError(error.message);
     }
+  };
+
+  const logout = () => {
+    localStorage.removeItem('currentUser');
+    setLoggedIn(false);
+  };
+
+  return (
+    <AuthContext.Provider value={{ loggedIn, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+};
+
+const Login = () => {
+  const { loggedIn, login } = useAuth();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState(null);
+
+  const handleLogin = async () => {
+    login(username, password, setError);
   };
 
   if (loggedIn) {

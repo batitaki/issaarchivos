@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { uploadMedia } from '../../services/fetchMedia.jsx';
+import { useAuth } from '../user/Login.jsx';
+import { Navigate } from 'react-router-dom';
+
 
 const PhotoUploader = ({ productId }) => {
   const [selectedFile, setSelectedFile] = useState(null);
+  const { loggedIn } = useAuth(); // Obtenemos el estado de autenticación desde el contexto
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -32,6 +36,11 @@ const PhotoUploader = ({ productId }) => {
       alert('Error uploading media');
     }
   };
+
+  // Verificamos si el usuario está autenticado, si no lo está, redirigimos a la página de inicio de sesión
+  if (!loggedIn) {
+    return <Navigate to="/issaarchivos/login" />;
+  }
 
   return (
     <div>
