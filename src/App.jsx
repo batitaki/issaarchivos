@@ -10,6 +10,7 @@ import './App.css';
 import BackgroundSketch from './components/layout/BackgroundSketch';
 import Fan from './components/collection/sketch/Fan';
 import Cart from './components/collection/cart/Cart';
+import Login from './components/user/Login';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route path="/issaarchivos/product/:id" element={<ProductDetail />} />
           <Route path="/issaarchivos/category/:categoryId" element={<Category />} /> 
           <Route path="/issaarchivos/cart" element = {<Cart/>}/>
+          <Route path="/issaarchivos/login" element = {<Login/>} />
         </Routes>
       </Router>
     </div>

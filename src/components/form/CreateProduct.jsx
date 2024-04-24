@@ -64,7 +64,7 @@ const CreateProduct = () => {
   };
 
   return (
-    <div className="my-container-register">
+    <div className="my-container-form">
       <h3 className="form-title"> CREATE PRODUCT</h3>
       <form onSubmit={handleSubmit} encType="multipart/form-data" className="my-form-form">
         {!categorySelected && (
