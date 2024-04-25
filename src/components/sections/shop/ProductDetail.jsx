@@ -7,7 +7,7 @@ import "./ProductDetail.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import PhotoUploader from "../../media/PhotoUploader";
+import PhotoUploader from "../media/PhotoUploader";
 import { useAuth } from '../../user/Login'; // Corregimos la importación
 import { Navigate } from 'react-router-dom';
 

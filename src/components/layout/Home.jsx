@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './Home.css'
-import Fan from "../collection/sketch/Fan"
+import Fan from "../sections/sketch/Fan"
 
 const Home = () => {
 
@@ -11,7 +11,6 @@ const Home = () => {
       <div className='home-sketch'>
      </div>
     </div>
-
 
     </>
   )

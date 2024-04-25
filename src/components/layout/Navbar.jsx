@@ -21,7 +21,7 @@ const Navbar = () => {
         <Link className='nav-logo' to="/issaarchivos/">AIM</Link>
         <div className='nav-options'>
           <Link className='nav-link' to="/issaarchivos/shop">Shop</Link>
-          <Link className='nav-link' to="/issaarchivos/">Collections</Link>
+          <Link className='nav-link' to="/issaarchivos/collection">Collections</Link>
           <Link className='nav-link' to="/issaarchivos/createProduct">Projects and Collaborations</Link>
           <Link className='nav-link' to="/issaarchivos/cart">Bag</Link>
         </div>

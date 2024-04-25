@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { uploadMedia } from '../../services/fetchMedia.jsx';
-import { useAuth } from '../user/Login.jsx';
+import { uploadMedia } from '../../../services/fetchMedia.jsx';
+import { useAuth } from '../../user/Login.jsx';
 import { Navigate } from 'react-router-dom';
 
 

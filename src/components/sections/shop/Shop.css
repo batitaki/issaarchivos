@@ -7,8 +7,9 @@
   position: relative;
 }
 
-.columns-container {
+.product-rows-container {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   width: 100%;
   max-width: 1200px;
@@ -18,33 +19,10 @@
   opacity: 0.8;
 }
 
-.column {
+.product-row {
+  width: calc(33.333% - 20px); /* Ajusta el ancho de las filas según el número de productos */
   margin-bottom: 20px;
   box-sizing: border-box;
-}
-
-.title {
-  color: rgb(7, 24, 70);
-  font-family: "Charis SIL", serif;
-  font-size: 30px;
-  font-weight: 1;
-  font-style: bold;
-  margin-bottom: 20px;
-}
-
-.description {
-  color: rgb(7, 24, 70);
-  font-family: "Charis SIL", serif;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}
-
-.text {
-  color: rgb(7, 24, 70);
-  font-family: "Charis SIL", serif;
 }
 
 .product-image {
