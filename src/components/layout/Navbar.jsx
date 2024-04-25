@@ -25,6 +25,7 @@ const Navbar = () => {
           <Link className='nav-link' to="/issaarchivos/createProduct">Projects and Collaborations</Link>
           <Link className='nav-link' to="/issaarchivos/cart">Bag</Link>
         </div>
+        <Link className='nav-link' to="/issaarchivos/login">Login</Link>
       </div>
     </div>
   );

@@ -7,7 +7,6 @@
   color: rgb(7, 24, 70);
   font-family: "Charis SIL", serif;
 }
-
 .mediaGallery {
   position: relative;
   width: 100%;
@@ -19,12 +18,25 @@
   width: 100%;
 }
 
+.top-content{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 90%;
+}
+
 .info {
   width: 95%;
-  height: 40vh;
+  height: 100%;
   border: 0.8px solid rgb(7, 24, 70);
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+
 
 .sizes-container {
   width: 100%;
@@ -70,15 +82,21 @@
   background-color: rgb(7, 24, 70);
   color: white;
 }
-
 .price {
   font-size: 2.5vh;
-  width: 100%;
-  margin-bottom: 15px;
-  color: rgb(7, 24, 70);
-  font-family: "Charis SIL", serif;
+  margin-bottom: 0; /* Elimina el margen inferior */
 }
 
+.product-colors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-colors li {
+  list-style: none;
+  margin-right: 5px; /* Espacio entre los colores */
+}
 .product-description {
   font-size: 1vw;
   color: rgb(7, 24, 70);
@@ -131,15 +149,7 @@
   outline: none;
 }
 
-.product-colors {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 
-.product-colors li {
-  list-style: none;
-}
 
 .color-circle {
   width: 20px;

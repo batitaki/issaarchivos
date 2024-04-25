@@ -25,6 +25,13 @@
   box-sizing: border-box;
 }
 
+.link-product {
+  text-decoration: none;
+  font-size: 15px;
+  color: rgb(7, 24, 70);
+  font-family: "Charis SIL", serif;
+}
+
 .product-image {
   width: 100%;
   max-width: 100%;

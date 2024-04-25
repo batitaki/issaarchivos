@@ -8,8 +8,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import PhotoUploader from "../media/PhotoUploader";
-import { useAuth } from '../../user/Login'; // Corregimos la importación
-import { Navigate } from 'react-router-dom';
+import { useAuth } from "../../user/Login"; // Corregimos la importación
+import { Navigate } from "react-router-dom";
 
 const Product = () => {
   const { id } = useParams();
@@ -128,62 +128,72 @@ const Product = () => {
             </Link>
             <br />
             <div className="info">
-              <button className="add-to-cart" onClick={addToCart}>
-                Add to Bag
-              </button>
-              <div className="product-colors">
-                <ul>
-                  {allColors.map((color, colorIndex) => (
-                    <li
-                      key={colorIndex}
-                      onClick={() => handleColorClick(color.name, color.media)}
-                      style={{
-                        display: "inline-block",
-                        marginRight: "5px",
-                      }}
-                    >
-                      <div
-                        className={`color-circle ${
-                          selectedColor === color.name ? "selected" : ""
-                        }`}
-                        style={{ backgroundColor: color.name }}
-                      ></div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="sizes-container">
-                <h4 className="price">Sizes:</h4>
-                <div className="size-options">
-                  {productDetails &&
-                    productDetails.Sizes &&
-                    productDetails.Sizes.map((size, index) => (
-                      <div
-                        key={index}
-                        className={`size-option${
-                          selectedSize === size.Name ? " selected" : ""
-                        }`}
-                        onClick={() => handleSizeSelect(size.Name)}
+              <div className="top-content">
+
+              <p className="product-title">{productDetails.Name}</p>
+              
+                <div className="product-colors">
+                  <ul>
+                    {allColors.map((color, colorIndex) => (
+                      <li
+                        key={colorIndex}
+                        onClick={() =>
+                          handleColorClick(color.name, color.media)
+                        }
+                        style={{
+                          display: "inline-block",
+                          marginRight: "5px",
+                        }}
                       >
-                        {size.Name}
-                      </div>
+                        <div
+                          className={`color-circle ${
+                            selectedColor === color.name ? "selected" : ""
+                          }`}
+                          style={{ backgroundColor: color.name }}
+                        ></div>
+                      </li>
                     ))}
+                  </ul>
+                </div>
+                <p className="price">
+                  {t("price")}: {productDetails.Price},00 USD$
+                </p>
+  
+                <div className="sizes-container">
+                  <h4 className="price">Sizes:</h4>
+                  <div className="size-options">
+                    {productDetails &&
+                      productDetails.Sizes &&
+                      productDetails.Sizes.map((size, index) => (
+                        <div
+                          key={index}
+                          className={`size-option${
+                            selectedSize === size.Name ? " selected" : ""
+                          }`}
+                          onClick={() => handleSizeSelect(size.Name)}
+                        >
+                          {size.Name}
+                        </div>
+                      ))}
+                  </div>
                 </div>
               </div>
-              <p className="product-title">{productDetails.Name}</p>
-              <p className="price">
-                {t("price")}: {productDetails.Price} USD
-              </p>
+
               <p className="product-description">
                 {productDetails.Description}
               </p>
+              <button className="add-to-cart" onClick={addToCart}>
+                Add to Bag
+              </button>
             </div>
+            
           </div>
         ) : (
           <p className="loading">LOADING...</p>
         )}
       </div>
-      {loggedIn && <PhotoUploader productId={id} />} {/* Mostramos el PhotoUploader solo si el usuario está autenticado */}
+      {loggedIn && <PhotoUploader productId={id} />}{" "}
+      {/* Mostramos el PhotoUploader solo si el usuario está autenticado */}
     </>
   );
 };

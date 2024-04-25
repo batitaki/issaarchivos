@@ -1,8 +1,7 @@
 .category {
     display: flex;
     flex-direction: column;
-    color: rgb(7, 24, 70);
-    font-family: "Charis SIL", serif;
+    font-family: "Archivo", sans-serif;
     align-items: center;
     margin-top: 100px;
 }
@@ -18,8 +17,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    color: rgb(7, 24, 70);
-    font-family: "Charis SIL", serif;
+    font-family: "Archivo", sans-serif;
     align-items: center;
     padding: 20px 20px;
     list-style: none;
@@ -36,7 +34,6 @@
     flex-direction: row;
     margin-bottom: 40px;
     color: rgb(7, 24, 70);
-    font-family: "Charis SIL", serif;
 }
 
 .name-category{
@@ -45,8 +42,10 @@
 }
 
 .category-list li.selected {
-    margin-top: -2px; /* Mueve la opción seleccionada hacia arriba 2px */
+    margin-top: -20px; /* Mueve la opción seleccionada hacia arriba 5px */
     /* Agrega cualquier otro estilo deseado para la opción seleccionada */
     text-decoration:underline;
     text-decoration-thickness: 0.2px; 
   }
+  
+  

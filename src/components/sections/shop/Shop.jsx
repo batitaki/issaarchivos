@@ -37,10 +37,14 @@ const Shop = () => {
       rows.push(
         <div className="product-row" key={i}>
           {rowProducts.map((product) => (
-            <Link to={`/issaarchivos/product/${product.ID}`} key={product.ID}>
+            <Link className='link-product' to={`/issaarchivos/product/${product.ID}`} key={product.ID}>
               <div className="product-container">
                 <div className="product">
                   <img className="product-image" src={product.Image} alt={product.Title} />
+                  <div className="product-details">
+                    <p className="product-name">{product.Name}</p>
+                    <p className="product-price">{product.Price},00 USD$</p>
+                  </div>
                 </div>
               </div>
             </Link>

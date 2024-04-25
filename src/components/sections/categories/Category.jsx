@@ -21,33 +21,45 @@ const Category = () => {
     fetchCategoryAndProducts();
   }, [categoryId]);
 
+  const renderProductRows = () => {
+    const rows = [];
+    const productsCount = products.length;
+
+    for (let i = 0; i < productsCount; i += 2) {
+      const rowProducts = products.slice(i, i + 2);
+
+      rows.push(
+        <div className="product-row" key={i}>
+          {rowProducts.map((product) => (
+            <Link className='link-product' to={`/issaarchivos/product/${product.ID}`} key={product.ID}>
+              <div className="product-container">
+                <div className="product">
+                  <img className="product-image" src={product.Image} alt={product.Title} />
+                  <div className="product-details">
+                    <p className="product-name">{product.Name}</p>
+                    <p className="product-price">{product.Price},00 USD$</p>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      );
+    }
+
+    return rows;
+  };
 
   return (
-    <>
-
-      <div className='category'>
+    
+    <div  className="collection-container">
       <CategoryNavbar categories={categories} /> 
-        <div className="columns-container">
-          {products &&
-            Array.from({ length: Math.ceil(products.length / 2) }).map((_, columnIndex) => (
-              <div className="column" key={columnIndex}>
-                {products
-                  .filter((_, index) => index % 2 === columnIndex)
-                  .map((product) => (
-                    <div className="product-container" key={product.ID}>
-                      <div className="product">
-                      <Link to={`/issaarchivos/product/${product.ID}`}>
-                          <img className="product-image" src={product.Image} alt={product.Title} />
-                        </Link>
-                      </div>
-                    </div>
-                  ))}
-              </div>
-            ))}
+      <div className="products">
+        <div className="product-rows-container">
+          {renderProductRows()}
         </div>
       </div>
-
-    </>
+    </div>
   );
 };
 
