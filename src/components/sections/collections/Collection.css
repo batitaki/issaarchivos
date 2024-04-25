@@ -1,0 +1,49 @@
+.collection-video-container {
+  display: flex;
+  justify-content: flex-start; /* Cambiado de 'first start' a 'flex-start' */
+  gap: 20vw;
+  margin-left: 2vw;
+  flex-direction: row;
+  margin-top: 25vh;
+  align-items: center;
+}
+
+.video-container {
+
+}
+
+.video {
+  width: 700px; 
+  height: auto;
+}
+
+/* Oculta los controles del video */
+.video::-webkit-media-controls {
+  display: none;
+}
+
+.video::-webkit-media-controls-enclosure {
+  display: none !important;
+}
+
+.video::-webkit-media-controls-panel {
+  display: none !important;
+}
+
+.video::-webkit-media-controls-play-button {
+  display: none !important;
+}
+
+.video::-webkit-media-controls-start-playback-button {
+  display: none !important;
+}
+
+.text-container {
+  /* Estilos para el contenedor de texto */
+}
+
+.video-title {
+  color: rgb(15, 30, 90);
+  font-size: 12px;
+  font-family: "Charis SIL", serif;
+}

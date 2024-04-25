@@ -1,7 +1,7 @@
 .category {
     display: flex;
     flex-direction: column;
-    font-family: "Archivo", sans-serif;
+    font-family: "Charis SIL", serif;
     align-items: center;
     margin-top: 100px;
 }
@@ -17,14 +17,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    font-family: "Archivo", sans-serif;
+    font-family: "Charis SIL", serif;
     align-items: center;
     padding: 20px 20px;
     list-style: none;
 }
 
 .category-link {
-    color: rgb(7, 24, 70);
+    color: rgb(15, 30, 90);
     font-size: 12px;
 }
 
@@ -33,7 +33,7 @@
     justify-content: space-around;
     flex-direction: row;
     margin-bottom: 40px;
-    color: rgb(7, 24, 70);
+    color: rgb(15, 30, 90);
 }
 
 .name-category{

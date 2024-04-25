@@ -3,7 +3,7 @@ import Sketch from "react-p5";
 
 import img1 from "../../../assets/panta2.png";
 import img2 from "../../../assets/sweater.png";
-import img3 from "../../../assets/maniqui.jpg";
+import img3 from "../../../assets/maniqui4.png";
 import img4 from "../../../assets/campera2.png";
 import img5 from "../../../assets/panta.png";
 import img6 from "../../../assets/pollera.png";
@@ -22,15 +22,15 @@ export default () => {
     imgDY = 115,
     imgEX = 60,
     imgEY = 360,
-    imgFX = 1207,
+    imgFX = 1187,
     imgFY = 380,
-    imgIX = 960,
+    imgIX = 920,
     imgIY = 130,
-    imgCX = window.innerWidth / 2 - 100,
+    imgCX = window.innerWidth / 2 - 180,
     imgCY = 50,
-    imgGX = 1200,
+    imgGX = 1180,
     imgGY = 130,
-    imgHX = 980,
+    imgHX = 938,
     imgHY = 380;
 
   let offsetX = 0,
@@ -65,11 +65,11 @@ export default () => {
     imgB.resize(250, 0); // SWEATER GRIS 1
     imgD.resize(255, 0); // CAMPERA CUERO
     // maniqui
-    imgC.resize(250, 0); // IMAGEN ESTATICA MANIQUI
+    imgC.resize(385, 0); // IMAGEN ESTATICA MANIQUI
     imgE.resize(180, 0); // PANTALON GRIS
     imgF.resize(220, 0); // POLLERA
     imgI.resize(225, 0); // SWATER APRETADO
-    imgG.resize(250, 0); // CAMPERA AZUL
+    imgG.resize(255, 0); // CAMPERA AZUL
     imgH.resize(185, 0); // PANTA CUERO
   };
 
@@ -216,6 +216,7 @@ export default () => {
   };
 
   return (
+    <>
     <Sketch
       preload={preload}
       setup={setup}
@@ -223,5 +224,6 @@ export default () => {
       mousePressed={mousePressed}
       mouseReleased={mouseReleased}
     />
+    </>
   );
 };

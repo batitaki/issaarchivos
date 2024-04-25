@@ -31,14 +31,14 @@ const Cart = () => {
 
   return (
     <div className="cart">
-      <h4 className="title"> Your Cart</h4>
+      <p className="title"> Your Cart</p>
       <div className="cart-titles">
-        <p className="title"> Product </p>
-        <p className="title"> Price </p>
-        <p className="title"> Quantity </p>
-        <p className="title"> Color </p>
-        <p className="title"> Size </p>
-        <p className="title"> Total </p>
+        <p > Product </p>
+        <p > Price </p>
+        <p> Quantity </p>
+        <p > Color </p>
+        <p > Size </p>
+        <p > Total </p>
       </div>
 
       <div className="separator" />
@@ -70,7 +70,7 @@ const Cart = () => {
           </div>
           <div className="color-circle" style={{ backgroundColor: item.selectedColor }}></div>
           <p className="item-size">
-            {item.selectedSize && `Size: ${item.selectedSize}`}
+            {item.selectedSize && ` ${item.selectedSize}`}
           </p>
           <p className="item-final-price">
             {" "}
@@ -83,6 +83,9 @@ const Cart = () => {
         <p className="title"> Subtotal: </p>
         <p className="title"> {subtotal} USD </p>
       </div>
+      <button className="checkout" >
+                Chek Out
+      </button>
     </div>
   );
 };

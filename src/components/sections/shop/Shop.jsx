@@ -43,7 +43,7 @@ const Shop = () => {
                   <img className="product-image" src={product.Image} alt={product.Title} />
                   <div className="product-details">
                     <p className="product-name">{product.Name}</p>
-                    <p className="product-price">{product.Price},00 USD$</p>
+                    <p className="product-price"> USD$ {product.Price},00 </p>
                   </div>
                 </div>
               </div>

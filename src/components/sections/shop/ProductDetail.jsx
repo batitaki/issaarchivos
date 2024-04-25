@@ -127,66 +127,60 @@ const Product = () => {
               {categoryName}
             </Link>
             <br />
-            <div className="info">
-              <div className="top-content">
 
+            <div className="top-content">
               <p className="product-title">{productDetails.Name}</p>
-              
-                <div className="product-colors">
-                  <ul>
-                    {allColors.map((color, colorIndex) => (
-                      <li
-                        key={colorIndex}
-                        onClick={() =>
-                          handleColorClick(color.name, color.media)
-                        }
-                        style={{
-                          display: "inline-block",
-                          marginRight: "5px",
-                        }}
+
+              <p className="price"> USD$ {productDetails.Price},00</p>
+
+              <div className="product-colors">
+                <ul>
+                  {allColors.map((color, colorIndex) => (
+                    <li
+                      key={colorIndex}
+                      onClick={() => handleColorClick(color.name, color.media)}
+                      style={{
+                        display: "inline-block",
+                        marginRight: "5px",
+                      }}
+                    >
+                      <div
+                        className={`color-circle ${
+                          selectedColor === color.name ? "selected" : ""
+                        }`}
+                        style={{ backgroundColor: color.name }}
+                      ></div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="sizes-container">
+                <div className="size-options">
+                  {productDetails &&
+                    productDetails.Sizes &&
+                    productDetails.Sizes.map((size, index) => (
+                      <div
+                        key={index}
+                        className={`size-option${
+                          selectedSize === size.Name ? " selected" : ""
+                        }`}
+                        onClick={() => handleSizeSelect(size.Name)}
                       >
-                        <div
-                          className={`color-circle ${
-                            selectedColor === color.name ? "selected" : ""
-                          }`}
-                          style={{ backgroundColor: color.name }}
-                        ></div>
-                      </li>
+                        {size.Name}
+                      </div>
                     ))}
-                  </ul>
-                </div>
-                <p className="price">
-                  {t("price")}: {productDetails.Price},00 USD$
-                </p>
-  
-                <div className="sizes-container">
-                  <h4 className="price">Sizes:</h4>
-                  <div className="size-options">
-                    {productDetails &&
-                      productDetails.Sizes &&
-                      productDetails.Sizes.map((size, index) => (
-                        <div
-                          key={index}
-                          className={`size-option${
-                            selectedSize === size.Name ? " selected" : ""
-                          }`}
-                          onClick={() => handleSizeSelect(size.Name)}
-                        >
-                          {size.Name}
-                        </div>
-                      ))}
-                  </div>
                 </div>
               </div>
-
-              <p className="product-description">
-                {productDetails.Description}
-              </p>
               <button className="add-to-cart" onClick={addToCart}>
                 Add to Bag
               </button>
             </div>
-            
+
+            <div className="proroduct-description-container">
+              <p className="product-description">
+                {productDetails.Description}
+              </p>
+            </div>
           </div>
         ) : (
           <p className="loading">LOADING...</p>

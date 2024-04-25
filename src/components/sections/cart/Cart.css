@@ -22,15 +22,16 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between; 
-    align-items: center; /* Alinear verticalmente los elementos */
-    width: 60%; /* Reducir el ancho para evitar que los elementos se extiendan demasiado */
+    align-items: center; 
+    width: 60%;
     font-family: "Charis SIL", serif;
   }
   
   .title {
-    color: rgb(7, 24, 70);
+    color: rgb(15, 30, 90);
     font-family: "Charis SIL", serif;
-    font-size: 1vw;
+    font-size: 1.5vw;
+    margin-bottom: 5vw;
   }
 
   .item-container {
@@ -42,36 +43,36 @@
   }
   
   .item {
-    color: rgb(7, 24, 70);
+    color: rgb(15, 30, 90);
     font-family: "Charis SIL", serif;
     font-size: 1vw;
   }
 
   .item-price {
-    color: rgb(7, 24, 70);
+    color: rgb(15, 30, 90);
     font-family: "Charis SIL", serif;
     font-size: 1vw;
-    margin-right: 4vw;
   }
+  
+
   
   .decrement-increment {
     background-color: white;
     border: none;
     padding: 2px;
-    color: rgb(7, 24, 70);
+    color: rgb(15, 30, 90);
     font-family: "Charis SIL", serif;
     font-size: 1vw;
-   }
+    width: 40px;
+  }
+  
 
-   .decrement {
-    margin-right: 4.5vw;
-   }
 
   .separator {
     width: 60%;
-    border-bottom: 1px solid #ccc;
-    margin: 10px 0;
-    color: rgb(7, 24, 70);
+    border-bottom: 1px solid rgb(15, 30, 90);
+    margin: 40px 0;
+    color: rgb(15, 30, 90);
   }
   
   .subtotal {
@@ -80,22 +81,33 @@
     align-items: center;
     width: 60%;
     padding: 10px 0;
-    color: rgb(7, 24, 70);
+    color: rgb(15, 30, 90);
     font-family: "Charis SIL", serif;
   }
 
   .item-final-price {
     display: block;
     margin-right: 1vw;
-    color: rgb(7, 24, 70);
+    color: rgb(15, 30, 90);
     font-family: "Charis SIL", serif;
     font-size: 1vw;
   }
   
   .subtotal .title {
     font-size: 15px;
-    color: rgb(7, 24, 70);
+    color: rgb(15, 30, 90);
     font-family: "Charis SIL", serif;
     font-size: 1vw;
+  }
+  
+  .checkout {
+    color: rgb(255, 255, 255);
+    font-family: "Charis SIL", serif;
+    font-size: 1.2vw;
+    padding: 5px;
+    background-color: rgb(15, 30, 90);
+    border: solid 0.5px rgb(15, 30, 90);
+    cursor: pointer;
+    width: 15vw;
   }
   

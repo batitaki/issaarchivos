@@ -19,7 +19,7 @@
   font-family: "Charis SIL", serif;
   display: flex;
   justify-content: center;
-  color: rgb(7, 24, 70);
+  color: rgb(15, 30, 90);
   animation: spin 1s linear infinite; /* Agrega una animación llamada 'spin' */
 }
 

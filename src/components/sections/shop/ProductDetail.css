@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  color: rgb(7, 24, 70);
+  color: rgb(15, 30, 90);
   font-family: "Charis SIL", serif;
 }
 .mediaGallery {
@@ -18,41 +18,38 @@
   width: 100%;
 }
 
-.top-content{
+.top-content {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   width: 90%;
+  margin-top: 3vh;
 }
 
 .info {
   width: 95%;
   height: 100%;
-  border: 0.8px solid rgb(7, 24, 70);
+  border: 0.8px solid rgb(15, 30, 90);
   padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-
+.proroduct-description-container {
+  margin-top: 8vh;
+  width: 80%;
+}
 
 .sizes-container {
   width: 100%;
-  max-width: 300px; /* Ancho máximo ajustable según tus necesidades */
-  color: rgb(7, 24, 70);
+  max-width: 10vw; /* Ancho máximo ajustable según tus necesidades */
+  color: rgb(15, 30, 90);
   font-family: "Charis SIL", serif;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-
-.sizes-container h4 {
-  margin-right: 10px;
-  margin-bottom: 0;
 }
 
 .size-options {
@@ -65,13 +62,9 @@
 .size-option {
   flex: 1;
   font-family: "Charis SIL", serif;
-  font-size: 1vw;
-  padding: 5px;
-  background-color: rgb(250, 250, 250);
-  border: solid 0.5px rgb(7, 24, 70);
+  font-size: 1.5vw;
+  background-color: rgb(255, 255, 255);
   cursor: pointer;
-  margin-right: 5px;
-  margin-bottom: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -79,12 +72,12 @@
 }
 
 .size-option.selected {
-  background-color: rgb(7, 24, 70);
-  color: white;
+  color: rgb(15, 30, 90);
+  text-decoration: line-through underline;
 }
+
 .price {
   font-size: 2.5vh;
-  margin-bottom: 0; /* Elimina el margen inferior */
 }
 
 .product-colors {
@@ -99,25 +92,14 @@
 }
 .product-description {
   font-size: 1vw;
-  color: rgb(7, 24, 70);
+  color: rgb(15, 30, 90);
   font-family: "Charis SIL", serif;
-  margin-bottom: 20px;
 }
 
 .product-title {
-  margin-top: 20px;
   font-size: 2.5vh;
-  margin-bottom: 20px;
-  color: rgb(7, 24, 70);
+  color: rgb(15, 30, 90);
   font-family: "Charis SIL", serif;
-}
-
-.productImage {
-  margin-top: 20px;
-}
-
-.product-detail-image {
-  width: 100%;
 }
 
 .image-carrousell {
@@ -149,11 +131,9 @@
   outline: none;
 }
 
-
-
 .color-circle {
-  width: 20px;
-  height: 20px;
+  width: 35px;
+  height: 35px;
   border-radius: 50%;
   margin-right: 5px;
   cursor: pointer;
@@ -162,17 +142,18 @@
 }
 
 .color-circle.selected {
-  border-color: #333; /* Cambia el color del borde del círculo seleccionado aquí */
+  border-color: rgb(15, 30, 90);
 }
 
 .add-to-cart {
-  color: rgb(7, 24, 70);
+  color: rgb(255, 255, 255);
   font-family: "Charis SIL", serif;
-  font-size: 1vw;
+  font-size: 1.2vw;
   padding: 5px;
-  background-color: rgb(250, 250, 250);
-  border: solid 0.5px rgb(7, 24, 70);
+  background-color: rgb(15, 30, 90);
+  border: solid 0.5px rgb(15, 30, 90);
   cursor: pointer;
+  width: 10vw;
 }
 
 .loading-container {

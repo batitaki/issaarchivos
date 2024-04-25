@@ -13,6 +13,7 @@ import Cart from './components/sections/cart/Cart';
 import Login from './components/user/Login';
 import { AuthProvider } from './components/user/Login';
 import CollectionSketch from './components/sections/sketch/CollectionSketch';
+import Collection from './components/sections/collections/Collection';
 function App() {
   return (
     <div>
@@ -28,7 +29,8 @@ function App() {
             <Route path="/issaarchivos/category/:categoryId" element={<Category />} /> 
             <Route path="/issaarchivos/cart" element={<Cart />} />
             <Route path="/issaarchivos/login" element={<Login />} />
-            <Route path="/issaarchivos/collection" element={ <CollectionSketch />} />
+            <Route path="/issaarchivos/collabs" element={ <CollectionSketch />} />
+            <Route path="/issaarchivos/collection" element={ <Collection />} />
           </Routes>
         </Router>
       </AuthProvider>
