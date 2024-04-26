@@ -10,9 +10,8 @@
 .product-rows-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
   width: 100%;
-  max-width: 1200px;
 }
 
 .product-container:hover .product-image {
@@ -20,14 +19,22 @@
 }
 
 .product-row {
-  width: calc(33.333% - 20px); /* Ajusta el ancho de las filas según el número de productos */
+  width: calc(25% - 20px); 
   margin-bottom: 20px;
   box-sizing: border-box;
 }
 
+
+.product-row:nth-child(4n + 1) {
+  margin-right: 0; 
+}
+
+
+
+
 .link-product {
   text-decoration: none;
-  font-size: 15px;
+  font-size: 13px;
   color: rgb(15, 30, 90);
   font-family: "Charis SIL", serif;
 }
@@ -39,6 +46,7 @@
   object-fit: cover;
   margin-bottom: 10px;
   transition: opacity 0.2s ease;
+  margin-top: 3.5vh;
 }
 
 .product-container {

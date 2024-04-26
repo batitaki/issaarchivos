@@ -3,7 +3,9 @@
   height: 7vh;
   width: 100%;
   top: 0;
-  transition: height 0.5s, padding-top 0.5s;
+  transition:
+    height 0.5s,
+    padding-top 0.5s;
   color: rgb(15, 30, 90);
   font-family: "Charis SIL", serif;
   font-weight: 400;
@@ -13,14 +15,15 @@
 }
 
 .expanded {
-  height: 200px; /* Altura expandida según sea necesario */
+  height: 200px;
 }
 
 .nav-container {
   display: flex;
-  justify-content: space-between; /* Alinea el logo a la izquierda y las opciones de navegación al centro */
+  justify-content: space-between;
   align-items: center;
-  padding: 0 20px; /* Añade un relleno a los lados para separar el contenido de los bordes */
+  padding: 0 20px;
+  margin-top: 2vh;
 }
 
 .nav-logo {
@@ -31,9 +34,10 @@
 
 .nav-options {
   display: flex;
-  justify-content: center; /* Centra las opciones de navegación */
+  justify-content: center;
   align-items: center;
-  flex-grow: 1; /* Permite que las opciones de navegación ocupen el espacio restante */
+  flex-grow: 1;
+  margin-right: 3.5vw;
 }
 
 .nav-link {
@@ -47,13 +51,57 @@
   color: #0fdbff;
 }
 
-.toggle-button  {
+.toggle-button {
   display: flex;
   justify-content: start;
   flex-direction: row;
-  color: rgb(0, 0, 0);
+  color: rgb(15, 30, 90);
   border: none;
   cursor: pointer;
   font-size: 30px;
   z-index: 2;
+}
+
+.search-button {
+  background-color: #ffffff;
+  color: rgb(15, 30, 90);
+  border: none;
+  padding: 8px 16px; 
+  border-radius: 4px; 
+  cursor: pointer; 
+  transition: background-color 0.3s ease; 
+  font-family: "Charis SIL", serif;
+}
+
+.search-button:hover {
+  color: rgba(
+    15,
+    30,
+    90,
+    0.8
+  );
+}
+
+.search-text {
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 13px;
+  color: rgb(15, 30, 90);
+  cursor: pointer;
+}
+
+.side-options {
+  position: absolute;
+  top: 5;
+  right: 2vw;
+}
+
+.search-input.active {
+  -webkit-appearance: none;
+  -moz-appearance: none; 
+  appearance: none;
+  border: none;
+  border-bottom: 1px solid rgb(15, 30, 90); 
+  font-family: "Charis SIL", serif;
+  outline: none; 
 }

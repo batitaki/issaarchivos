@@ -9,6 +9,7 @@ const CreateProduct = () => {
     Name: '',
     Image: '',
     Price: '',
+    Care: '',
     Description: '',
   });
   const [categorySelected, setCategorySelected] = useState(false);
@@ -118,6 +119,18 @@ const CreateProduct = () => {
                 className="my-textarea-form"
                 name="Description"
                 value={formData.Description}
+                onChange={handleChange}
+              />
+            </div>
+
+            <div className="my-form-group-form">
+              <label htmlFor="Care" className="my-label-form">
+                CARE
+              </label>
+              <textarea
+                className="my-textarea-form"
+                name="Care"
+                value={formData.Care}
                 onChange={handleChange}
               />
             </div>

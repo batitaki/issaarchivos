@@ -6,7 +6,7 @@ import { Navigate } from 'react-router-dom';
 
 const PhotoUploader = ({ productId }) => {
   const [selectedFile, setSelectedFile] = useState(null);
-  const { loggedIn } = useAuth(); // Obtenemos el estado de autenticación desde el contexto
+  const { loggedIn } = useAuth();
 
   const handleFileChange = (event) => {
     setSelectedFile(event.target.files[0]);
@@ -37,7 +37,6 @@ const PhotoUploader = ({ productId }) => {
     }
   };
 
-  // Verificamos si el usuario está autenticado, si no lo está, redirigimos a la página de inicio de sesión
   if (!loggedIn) {
     return <Navigate to="/issaarchivos/login" />;
   }

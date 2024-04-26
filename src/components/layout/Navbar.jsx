@@ -1,19 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'; 
-import { getCategory } from '../../services/fetchProducts'; // Importar getCategory
+import { Link } from 'react-router-dom';
+import { searchProducts } from '../../services/fetchProducts'; 
+
 
 import './Navbar.css';
 
 const Navbar = () => {
-  const [categories, setCategories] = useState([]);
+  const [searchTerm, setSearchTerm] = useState('');
+  const [showSearchInput, setShowSearchInput] = useState(false); 
+  const [cartItemCount, setCartItemCount] = useState(0); 
 
   useEffect(() => {
-    async function fetchCategories() {
-      const data = await getCategory();
-      setCategories(data);
-    }
-    fetchCategories();
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    setCartItemCount(storedCart.length);
   }, []);
+
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    if (searchTerm.trim() !== '') {
+      const results = await searchProducts(searchTerm);
+    
+      const searchParams = new URLSearchParams({ search: searchTerm });
+
+      window.location.href = `/issaarchivos/shop?${searchParams.toString()}`;
+    }
+  };
+
+  const toggleSearchInput = () => {
+    setShowSearchInput(!showSearchInput);
+  };
 
   return (
     <div className="sidenav">
@@ -25,7 +40,31 @@ const Navbar = () => {
           <Link className='nav-link' to="/issaarchivos/collabs">Virtual Fiting</Link>
           <Link className='nav-link' to="/issaarchivos/about">About</Link>
         </div>
-        <Link className='nav-link' to="/issaarchivos/login">Login</Link>
+        <div className='side-options'>
+          {showSearchInput ? (
+            <form className="search-form" onSubmit={handleSearch}>
+              <div className="search-input-wrapper">
+                <input
+                  className={`search-input ${showSearchInput ? 'active' : ''}`}
+                  type="text"
+                  placeholder="SEARCH"
+                  value={searchTerm}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                  autoFocus
+                />
+                <button className="search-button" type="submit">SEARCH</button>
+              </div>
+            </form>
+          ) : (
+            <span className="search-text" onClick={toggleSearchInput}>SEARCH</span>
+          )}
+          {!showSearchInput && (
+            <>
+              <Link className='search-text' to="/issaarchivos/login">LOG IN</Link>
+              <Link className='nav-link'  to="/issaarchivos/cart"> ({cartItemCount})</Link>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );

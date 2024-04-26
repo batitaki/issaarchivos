@@ -1,20 +1,22 @@
 .cart {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100vw;
-    height: 100vh;
-    font-family: "Charis SIL", serif;
-    position: absolute;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+  height: auto;
+  font-family: "Charis SIL", serif;
+  position: inherit;
+  margin-top: 20vh;
+  overflow-y: auto; 
+}
   
   .cart-titles {
     display: flex;
+    color: rgb(15, 30, 90);
     flex-direction: row;
-    justify-content: space-between; /* Distribuye los elementos horizontalmente */
-    width: 60%; /* Reducir el ancho para evitar que los elementos se extiendan demasiado */
-    padding: 0 10px; /* Agregar relleno para separar del borde */
+    justify-content: space-between;
+    width: 60%;
+    padding: 0 10px;
     font-family: "Charis SIL", serif;
   }
   
@@ -35,11 +37,10 @@
   }
 
   .item-container {
-    width: 100px; /* Ancho fijo para contenedor de imagen */
-    height: 100px; /* Altura fija para contenedor de imagen */
+    width: 80px;
+    height: auto; 
     display: flex;
-    justify-content: center; /* Centrar horizontalmente */
-    align-items: center; /* Centrar verticalmente */
+    align-items: center; 
   }
   
   .item {

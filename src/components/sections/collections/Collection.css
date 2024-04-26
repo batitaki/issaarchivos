@@ -1,6 +1,6 @@
 .collection-video-container {
   display: flex;
-  justify-content: flex-start; /* Cambiado de 'first start' a 'flex-start' */
+  justify-content: flex-start; 
   gap: 20vw;
   margin-left: 2vw;
   flex-direction: row;
@@ -8,16 +8,11 @@
   align-items: center;
 }
 
-.video-container {
-
-}
-
 .video {
   width: 700px; 
   height: auto;
 }
 
-/* Oculta los controles del video */
 .video::-webkit-media-controls {
   display: none;
 }
@@ -36,10 +31,6 @@
 
 .video::-webkit-media-controls-start-playback-button {
   display: none !important;
-}
-
-.text-container {
-  /* Estilos para el contenedor de texto */
 }
 
 .video-title {

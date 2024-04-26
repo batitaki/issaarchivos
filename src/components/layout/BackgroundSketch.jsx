@@ -9,17 +9,16 @@ const BackgroundSketch = () => {
   let prevMouseY = 0;
 
   const setup = (p5, canvasParentRef) => {
-    // Crear lienzo del tamaño de la ventana
+
     p5.createCanvas(window.innerWidth, window.innerHeight).parent(
       canvasParentRef
     );
     p5.angleMode(p5.DEGREES);
     p5.rectMode(p5.CENTER);
 
-    // Cargar la imagen de partícula una vez
+
     setParticleImg(p5.loadImage(particleImage));
 
-    // Crear partículas iniciales al inicio
     for (let i = 0; i < 50; i++) {
       const particle = new Particle(p5, p5.random(p5.width), p5.random(p5.height));
       particles.push(particle);
@@ -30,18 +29,16 @@ const BackgroundSketch = () => {
     p5.background(250);
     p5.noFill();
 
-    // Dibujar y actualizar partículas
     for (let i = particles.length - 1; i >= 0; i--) {
       const particle = particles[i];
       particle.update(p5);
       particle.display(p5);
-      // Eliminar partícula si ha desaparecido
+
       if (particle.isDead()) {
         particles.splice(i, 1);
       }
     }
 
-    // Crear partícula en la posición del mouse si se está moviendo
     if (prevMouseX !== p5.mouseX || prevMouseY !== p5.mouseY) {
       if (particles.length < 50) {
         const particle = new Particle(p5, p5.mouseX, p5.mouseY);
@@ -59,13 +56,13 @@ const BackgroundSketch = () => {
       this.acceleration = p5.createVector();
       this.maxSpeed = 3;
       this.maxForce = 0.05;
-      this.particleImg = particleImg; // Usar la imagen cargada
-      this.radius = p5.random(4, 10); // Tamaño aleatorio
-      this.alpha = 255; // Opacidad inicial
-      // Carga de la imagen de la partícula
+      this.particleImg = particleImg; 
+      this.radius = p5.random(4, 10);
+      this.alpha = 255; 
+  
       this.particleImg = p5.loadImage(particleImage);
-      // Calcular el número de ciclos de dibujo para 2 segundos
-      this.lifespan = 30; // 60 cuadros por segundo * 2 segundos
+  
+      this.lifespan = 30;
     }
 
     update(p5) {
@@ -73,18 +70,18 @@ const BackgroundSketch = () => {
       this.velocity.limit(this.maxSpeed);
       this.position.add(this.velocity);
       this.acceleration.mult(0);
-      // Disminuir la opacidad con el tiempo
+
       this.alpha -= 105 / this.lifespan;
     }
 
 display(p5) {
-  // Calculate aspect ratio
+
   const aspectRatio = this.particleImg.width / this.particleImg.height;
-  // Calculate width and height based on radius and aspect ratio
+
   const width = this.radius * 7;
   const height = width / aspectRatio;
   
-  // Draw the image of the particle with opacity
+
   p5.tint(255, this.alpha);
   p5.imageMode(p5.CENTER);
   p5.image(this.particleImg, this.position.x, this.position.y, width, height);
@@ -93,7 +90,7 @@ display(p5) {
 
 
     isDead() {
-      return this.alpha <= 0; // La partícula desaparece cuando la opacidad es menor o igual a 0
+      return this.alpha <= 0; 
     }
   }
 

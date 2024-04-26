@@ -2,18 +2,16 @@ import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getCategory, getProductById } from "../../../services/fetchProducts";
 import { getMediaByProduct } from "../../../services/fetchMedia";
-import { useTranslation } from "react-i18next";
 import "./ProductDetail.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import PhotoUploader from "../media/PhotoUploader";
-import { useAuth } from "../../user/Login"; // Corregimos la importación
-import { Navigate } from "react-router-dom";
+import { useAuth } from "../../user/Login";
+import Shop from "./Shop";
 
 const Product = () => {
   const { id } = useParams();
-  const { t } = useTranslation();
   const [loading, setLoading] = useState(true);
   const [productDetails, setProductDetails] = useState(null);
   const [categoryName, setCategoryName] = useState("");
@@ -21,7 +19,7 @@ const Product = () => {
   const [selectedColor, setSelectedColor] = useState(null);
   const [selectedSize, setSelectedSize] = useState(null);
   const [selectedMedia, setSelectedMedia] = useState(null);
-  const { loggedIn } = useAuth(); // Obtenemos el estado de autenticación desde el contexto
+  const { loggedIn } = useAuth();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -129,9 +127,9 @@ const Product = () => {
             <br />
 
             <div className="top-content">
-              <p className="product-title">{productDetails.Name}</p>
-
-              <p className="price"> USD$ {productDetails.Price},00</p>
+              <p className="product-title">
+                {productDetails.Name} / $ {productDetails.Price},00{" "}
+              </p>
 
               <div className="product-colors">
                 <ul>
@@ -180,14 +178,16 @@ const Product = () => {
               <p className="product-description">
                 {productDetails.Description}
               </p>
+              <p>Care</p>
+              <p className="product-care">{productDetails.Care}</p>
             </div>
           </div>
         ) : (
           <p className="loading">LOADING...</p>
         )}
       </div>
+      <Shop />
       {loggedIn && <PhotoUploader productId={id} />}{" "}
-      {/* Mostramos el PhotoUploader solo si el usuario está autenticado */}
     </>
   );
 };

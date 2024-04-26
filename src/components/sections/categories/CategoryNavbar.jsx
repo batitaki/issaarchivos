@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getCategory } from '../../../services/fetchProducts';
 import { Link, useLocation } from 'react-router-dom';
-import './Category.css'; // Asegúrate de importar tus estilos si los tienes
+import './Category.css';
 
 const CategoryNavbar = () => {
   const [categories, setCategories] = useState([]);

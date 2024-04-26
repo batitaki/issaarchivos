@@ -47,32 +47,53 @@ export const getCategory = async () => {
   }
 };
 
-
 export const getProductById = async (productId) => {
   try {
-    const response = await fetch(`${import.meta.env.VITE_REACT_APP_API_ENDPOINT}/products/products/${productId}`); 
+    const response = await fetch(
+      `${import.meta.env.VITE_REACT_APP_API_ENDPOINT}/products/products/${productId}`
+    );
     const data = await response.json();
     return data;
   } catch (error) {
     console.error(`Error fetching product with ID ${productId}:`, error);
-    return null; 
+    return null;
+  }
+};
+
+export const searchProducts = async (searchTerm) => {
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_REACT_APP_API_ENDPOINT}/products/search?term=${searchTerm}`
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(`Error searching products for term "${searchTerm}":`, error);
+    return [];
   }
 };
 
 export const getProductsByCategory = async (categoryId) => {
   try {
-    const response = await fetch(`${import.meta.env.VITE_REACT_APP_API_ENDPOINT}/products/byCategory/${categoryId}`);
+    const response = await fetch(
+      `${import.meta.env.VITE_REACT_APP_API_ENDPOINT}/products/byCategory/${categoryId}`
+    );
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error(`Error fetching products for category with ID ${categoryId}:`, error);
+    console.error(
+      `Error fetching products for category with ID ${categoryId}:`,
+      error
+    );
     return [];
   }
 };
 
 export const getCategoryById = async (categoryId) => {
   try {
-    const response = await fetch(`${import.meta.env.VITE_REACT_APP_API_ENDPOINT}/category/category/${categoryId}`);
+    const response = await fetch(
+      `${import.meta.env.VITE_REACT_APP_API_ENDPOINT}/category/category/${categoryId}`
+    );
     const data = await response.json();
     return data;
   } catch (error) {
