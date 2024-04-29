@@ -12,3 +12,20 @@
   opacity: 0.8;
 }
 
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; /* Ajusta la altura según sea necesario */
+  font-family: "Charis SIL", serif;
+  color: rgb(15, 30, 90);
+  font-weight: 400;
+
+  text-align: center; /* Para asegurarte de que el texto esté centrado horizontalmente */
+}
+
+.about-p{
+  width: 70%;
+}

@@ -14,6 +14,7 @@ import Login from './components/user/Login';
 import { AuthProvider } from './components/user/Login';
 import CollectionSketch from './components/sections/sketch/CollectionSketch';
 import Collection from './components/sections/collections/Collection';
+import About from './components/layout/About';
 function App() {
   return (
     <div>
@@ -31,6 +32,7 @@ function App() {
             <Route path="/issaarchivos/login" element={<Login />} />
             <Route path="/issaarchivos/collabs" element={ <CollectionSketch />} />
             <Route path="/issaarchivos/collection" element={ <Collection />} />
+            <Route path="/issaarchivos/about" element={ <About />} />
           </Routes>
         </Router>
       </AuthProvider>
