@@ -14,9 +14,6 @@
   width: 100%;
 }
 
-.product-container:hover .product-image {
-  opacity: 0.8;
-}
 
 .product-row {
   width: calc(25% - 20px); 

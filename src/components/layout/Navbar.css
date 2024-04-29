@@ -63,7 +63,7 @@
 }
 
 .search-button {
-  background-color: #ffffff;
+  background-color: #ffffff00;
   color: rgb(15, 30, 90);
   border: none;
   padding: 8px 16px; 
@@ -104,4 +104,5 @@
   border-bottom: 1px solid rgb(15, 30, 90); 
   font-family: "Charis SIL", serif;
   outline: none; 
+  background-color: #ffffff00 ;
 }

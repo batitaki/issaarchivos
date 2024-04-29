@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Sketch from "react-p5";
 
 export default () => {
-  const [x, setX] = useState(10);
-  const [y, setY] = useState(10);
+  const [x, setX] = useState(3);
+  const [y, setY] = useState(3);
   const [dragging, setDragging] = useState(false);
 
   const setup = (p5, canvasParentRef) => {
@@ -18,7 +18,7 @@ export default () => {
 
     p5.translate(p5.width / 2, p5.height / 2);
 
-    for (let i = 0; i < 300; i++) {
+    for (let i = 0; i < 111; i++) {
       p5.push();
       p5.rotate(p5.sin(p5.frameCount + i) * 500);
 
