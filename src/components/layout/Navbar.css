@@ -66,20 +66,15 @@
   background-color: #ffffff00;
   color: rgb(15, 30, 90);
   border: none;
-  padding: 8px 16px; 
-  border-radius: 4px; 
-  cursor: pointer; 
-  transition: background-color 0.3s ease; 
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
   font-family: "Charis SIL", serif;
 }
 
 .search-button:hover {
-  color: rgba(
-    15,
-    30,
-    90,
-    0.8
-  );
+  color: rgba(15, 30, 90, 0.8);
 }
 
 .search-text {
@@ -98,11 +93,11 @@
 
 .search-input.active {
   -webkit-appearance: none;
-  -moz-appearance: none; 
+  -moz-appearance: none;
   appearance: none;
   border: none;
-  border-bottom: 1px solid rgb(15, 30, 90); 
+  border-bottom: 1px solid rgb(15, 30, 90);
   font-family: "Charis SIL", serif;
-  outline: none; 
-  background-color: #ffffff00 ;
+  outline: none;
+  background-color: #ffffff00;
 }

@@ -18,7 +18,7 @@ import About from './components/layout/About';
 function App() {
   return (
     <div>
-      <AuthProvider> {/* Envuelve la aplicación con AuthProvider */}
+      <AuthProvider> 
         <Router>
           <Navbar />
           <Routes>
@@ -33,6 +33,7 @@ function App() {
             <Route path="/issaarchivos/collabs" element={ <CollectionSketch />} />
             <Route path="/issaarchivos/collection" element={ <Collection />} />
             <Route path="/issaarchivos/about" element={ <About />} />
+
           </Routes>
         </Router>
       </AuthProvider>
