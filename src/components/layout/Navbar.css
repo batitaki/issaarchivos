@@ -6,12 +6,17 @@
   transition:
     height 0.5s,
     padding-top 0.5s;
-  color: rgb(15, 30, 90);
+  color:rgb(0, 0, 0);
   font-family: "Charis SIL", serif;
   font-weight: 400;
   font-style: normal;
-  z-index: 9999;
+  z-index: 9;
+  background-color: transparent;
   opacity: 0.8;
+}
+
+.sidenav * {
+  background-color: transparent !important;
 }
 
 .expanded {
@@ -19,6 +24,7 @@
 }
 
 .nav-container {
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -29,7 +35,7 @@
 .nav-logo {
   text-decoration: none;
   font-size: 1.7vw;
-  color: rgb(15, 30, 90);
+  color: rgb(0, 0, 0);
 }
 
 .nav-options {
@@ -44,18 +50,18 @@
   padding: 10px 15px;
   text-decoration: none;
   font-size: 14px;
-  color: rgb(15, 30, 90);
+  color:rgb(0, 0, 0);
 }
 
 .toggle-button:hover {
-  color: #0fdbff;
+  color: rgb(0, 0, 0);
 }
 
 .toggle-button {
   display: flex;
   justify-content: start;
   flex-direction: row;
-  color: rgb(15, 30, 90);
+  color: rgb(0, 0, 0);
   border: none;
   cursor: pointer;
   font-size: 30px;
@@ -63,25 +69,23 @@
 }
 
 .search-button {
-  background-color: #ffffff00;
-  color: rgb(15, 30, 90);
+  color:rgb(0, 0, 0);
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   font-family: "Charis SIL", serif;
 }
 
 .search-button:hover {
-  color: rgba(15, 30, 90, 0.8);
+  color:  rgba(0, 0, 0, 0.8);
 }
 
 .search-text {
   padding: 10px 15px;
   text-decoration: none;
   font-size: 13px;
-  color: rgb(15, 30, 90);
+  color:rgb(0, 0, 0);
   cursor: pointer;
 }
 
@@ -91,13 +95,13 @@
   right: 2vw;
 }
 
-.search-input.active {
+.search-input {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
-  border-bottom: 1px solid rgb(15, 30, 90);
+  border-bottom: 1px solid rgb(0, 0, 0);
   font-family: "Charis SIL", serif;
   outline: none;
-  background-color: #ffffff00;
 }
+

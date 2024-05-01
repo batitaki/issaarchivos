@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Sketch from "react-p5";
 
 export default () => {
-  const [x, setX] = useState(3);
-  const [y, setY] = useState(3);
+  const [x, setX] = useState(1);
+  const [y, setY] = useState(1);
   const [dragging, setDragging] = useState(false);
 
   const setup = (p5, canvasParentRef) => {
@@ -18,19 +18,21 @@ export default () => {
 
     p5.translate(p5.width / 2, p5.height / 2);
 
-    for (let i = 0; i < 111; i++) {
+    for (let i = 0; i < 167; i++) {
       p5.push();
       p5.rotate(p5.sin(p5.frameCount + i) * 500);
 
-      const blueScale = p5.map(p5.sin(p5.frameCount * 4), -74, 7, 24, 74);
+      // Utilizar el color British Green
+      const britishGreen = {
+        r: 0,
+        g: 0,
+        b: 0
+      };
 
-      p5.stroke(0, 0, blueScale);
+      p5.stroke(britishGreen.r, britishGreen.g, britishGreen.b);
 
-      p5.circle(x, y, 300 - i * 3, 500 - i / 3, 300 - i);
+      p5.circle(x, y, 500 - i * 3, 500 - i / 3, 500 - i);
     
- 
-
-
       p5.pop();
     }
   };

@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     overflow-x: hidden;
+    background-color: rgb(250, 255, 250); 
   }
   
   .sketch-container{
@@ -19,7 +20,7 @@
   font-family: "Charis SIL", serif;
   display: flex;
   justify-content: center;
-  color: rgb(15, 30, 90);
+  color:rgb(0, 0, 0);
   animation: spin 1s linear infinite; /* Agrega una animación llamada 'spin' */
 }
 

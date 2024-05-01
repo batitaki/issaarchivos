@@ -24,7 +24,7 @@
 }
 
 .category-link {
-    color: rgb(15, 30, 90);
+    color:rgb(0, 0, 0);
     font-size: 12px;
 }
 
@@ -33,9 +33,8 @@
     justify-content: space-around;
     flex-direction: row;
     margin-bottom: 40px;
-    color: rgb(15, 30, 90);
+    color: rgb(0, 0, 0);
 }
-
 .name-category{
     margin-bottom: 20px;
 

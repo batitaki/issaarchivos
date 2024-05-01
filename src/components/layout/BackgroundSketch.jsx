@@ -9,18 +9,20 @@ const BackgroundSketch = () => {
   let prevMouseY = 0;
 
   const setup = (p5, canvasParentRef) => {
-
     p5.createCanvas(window.innerWidth, window.innerHeight).parent(
       canvasParentRef
     );
     p5.angleMode(p5.DEGREES);
     p5.rectMode(p5.CENTER);
 
-
     setParticleImg(p5.loadImage(particleImage));
 
     for (let i = 0; i < 50; i++) {
-      const particle = new Particle(p5, p5.random(p5.width), p5.random(p5.height));
+      const particle = new Particle(
+        p5,
+        p5.random(p5.width),
+        p5.random(p5.height)
+      );
       particles.push(particle);
     }
   };
@@ -56,12 +58,12 @@ const BackgroundSketch = () => {
       this.acceleration = p5.createVector();
       this.maxSpeed = 3;
       this.maxForce = 0.05;
-      this.particleImg = particleImg; 
+      this.particleImg = particleImg;
       this.radius = p5.random(4, 10);
-      this.alpha = 255; 
-  
+      this.alpha = 255;
+
       this.particleImg = p5.loadImage(particleImage);
-  
+
       this.lifespan = 30;
     }
 
@@ -74,28 +76,39 @@ const BackgroundSketch = () => {
       this.alpha -= 105 / this.lifespan;
     }
 
-display(p5) {
+    display(p5) {
+      const aspectRatio = this.particleImg.width / this.particleImg.height;
+      const width = this.radius * 7;
+      const height = width / aspectRatio;
 
-  const aspectRatio = this.particleImg.width / this.particleImg.height;
-
-  const width = this.radius * 7;
-  const height = width / aspectRatio;
-  
-
-  p5.tint(255, this.alpha);
-  p5.imageMode(p5.CENTER);
-  p5.image(this.particleImg, this.position.x, this.position.y, width, height);
-  p5.noTint();
-}
-
+      p5.tint(255, this.alpha);
+      p5.imageMode(p5.CENTER);
+      p5.image(
+        this.particleImg,
+        this.position.x,
+        this.position.y,
+        width,
+        height
+      );
+      p5.noTint();
+    }
 
     isDead() {
-      return this.alpha <= 0; 
+      return this.alpha <= 0;
     }
   }
 
   return (
-    <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, zIndex: -1 }}>
+    <div
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        zIndex: -1,
+      }}
+    >
       <Sketch setup={setup} draw={draw} />
     </div>
   );

@@ -45,7 +45,7 @@ const Navbar = () => {
         <Link className="nav-logo" to="/issaarchivos/">
           AIM
         </Link>
-        <div className="nav-options">
+        <div className={`nav-options ${showSearchInput ? "active" : ""}`}>
           <Link className="nav-link" to="/issaarchivos/shop">
             Shop
           </Link>
@@ -62,9 +62,11 @@ const Navbar = () => {
         <div className="side-options">
           {showSearchInput ? (
             <form className="search-form" onSubmit={handleSearch}>
-              <div className="search-input-wrapper">
+              <div
+                className={`search-input-wrapper ${showSearchInput ? "active" : ""}`}
+              >
                 <input
-                  className={`search-input ${showSearchInput ? "active" : ""}`}
+                  className="search-input"
                   type="text"
                   placeholder="SEARCH"
                   value={searchTerm}

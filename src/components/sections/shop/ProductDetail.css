@@ -4,7 +4,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  color: rgb(15, 30, 90);
+  color:rgb(0, 0, 0);
   font-family: "Charis SIL", serif;
 }
 .mediaGallery {
@@ -29,7 +29,7 @@
 .info {
   width: 95%;
   height: 100%;
-  border: 0.8px solid rgb(15, 30, 90);
+  border: 0.8px solid rgb(0, 0, 0);
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -40,7 +40,7 @@
 .sizes-container {
   width: 100%;
   max-width: 10vw; 
-  color: rgb(15, 30, 90);
+  color: rgb(0, 0, 0);
   font-family: "Charis SIL", serif;
   display: flex;
   flex-wrap: wrap;
@@ -67,7 +67,7 @@
 }
 
 .size-option.selected {
-  color: rgb(15, 30, 90);
+  color:rgb(0, 0, 0);
   text-decoration: line-through underline;
 }
 
@@ -98,7 +98,7 @@
 
 .product-description {
   font-size: 1vw;
-  color: rgb(15, 30, 90);
+  color: rgb(0, 0, 0);
   font-family: "Charis SIL", serif;
   width: 30%;
   text-align: center; /* Centramos el texto */
@@ -107,7 +107,7 @@
 
 .product-care {
   font-size: 1vw;
-  color: rgb(15, 30, 90);
+  color:rgb(0, 0, 0);
   font-family: "Charis SIL", serif;
   width: 30%;
   white-space: pre-line;
@@ -116,7 +116,7 @@
 
 .product-title {
   font-size: 2vh;
-  color: rgb(15, 30, 90);
+  color: rgb(0, 0, 0);
   font-family: "Charis SIL", serif;
 }
 
@@ -160,7 +160,7 @@
 }
 
 .color-circle.selected {
-  border-color: rgb(15, 30, 90);
+  border-color:rgb(0, 0, 0);
 }
 
 .add-to-cart {
@@ -168,8 +168,8 @@
   font-family: "Charis SIL", serif;
   font-size: 1.2vw;
   padding: 5px;
-  background-color: rgb(15, 30, 90);
-  border: solid 0.5px rgb(15, 30, 90);
+  background-color: rgb(0, 0, 0);
+  border: solid 0.5px rgb(0, 0, 0);
   cursor: pointer;
   width: 10vw;
 }

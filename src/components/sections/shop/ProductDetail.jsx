@@ -34,6 +34,15 @@ const Product = () => {
 
         const mediaData = await getMediaByProduct(id);
         setMedia(mediaData);
+        
+        // Seleccionar el primer color y media por defecto
+        if (mediaData.length > 0) {
+          const firstMedia = mediaData[0];
+          const firstColor = firstMedia.Colors[0].Name;
+          setSelectedColor(firstColor);
+          setSelectedMedia(firstMedia.Image);
+        }
+
         setLoading(false);
       } catch (error) {
         console.error("Error fetching product details:", error);

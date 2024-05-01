@@ -4,10 +4,10 @@
   align-items: center;
   justify-content: center;
   margin: 10vh auto; 
-  color: rgb(7, 24, 70);
+  color: rgb(0, 0, 0);
   font-family: "Charis SIL", serif;
   font-style: normal;
-  border: 0.5px solid rgb(7, 24, 70);
+  border: 0.5px solid rgb(0, 0, 0);
   width: 90%; 
   max-width: 600px; 
   box-sizing: border-box;
@@ -21,7 +21,7 @@
 .form-title {
   display: block;
   margin-bottom: 5px;
-  color: rgb(7, 24, 70);
+  color: rgb(0, 0, 0);
   font-family: "Charis SIL", serif;
   font-size: 1.5em; 
 }
@@ -30,27 +30,27 @@
 .my-textarea-form {
   width: 100%; 
   max-width: 100%; 
-  border: 0.5px solid #000000;
+  border: 0.5px solidrgb(0, 0, 0);
   padding: 5px;
   outline: none;
   border-radius: 2px;
   margin-bottom: 15px;
   box-sizing: border-box;
-  color: rgb(7, 24, 70);
+  color:rgb(0, 0, 0);
   font-family: "Charis SIL", serif;
 }
 
 .my-select-form {
   width: 100%;
   max-width: 100%;
-  background-color: rgb(7, 24, 70);
+  background-color:rgb(0, 0, 0);
   border: 0.5px solidrgb(7, 24, 70);
   padding: 5px;
   outline: none;
   border-radius: 2px;
   margin-bottom: 15px;
   box-sizing: border-box;
-  color: rgb(7, 24, 70);
+  color:rgb(0, 0, 0);
   font-family: "Charis SIL", serif;
 }
 
@@ -65,7 +65,7 @@
   right: 0;
   bottom: 0;
   padding: 5px;
-  color: rgb(7, 24, 70);
+  color:rgb(0, 0, 0);
   font-family: "Charis SIL", serif;
   pointer-events: none;
   z-index: 1; 
@@ -75,13 +75,13 @@
 .my-link-form {
   width: 100%;
   margin-top: 2vw;
-  color: rgb(7, 24, 70);
+  color: rgb(0, 0, 0);
   font-family: "Charis SIL", serif;
   background-color: #ffffff;
   text-decoration: none;
   text-align: center;
   padding: 10px;
-  border: solid 0.5px rgb(7, 24, 70);
+  border: solid 0.5px rgb(0, 0, 0);
   cursor: pointer;
 }
 
