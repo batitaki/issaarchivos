@@ -94,7 +94,7 @@ const Shop = () => {
       <CategoryNavbar categories={categories} />
 
       {loading ? (
-        <div className="loading">Loading...</div>
+        <div className="loading">LOADING...</div>
       ) : (
         <div className="products">
           <div className="product-rows-container">

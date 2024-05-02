@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import Sketch from "react-p5";
 
 export default () => {
-  const [x, setX] = useState(1);
-  const [y, setY] = useState(1);
+  const [x, setX] = useState(0.4);
+  const [y, setY] = useState(0.4);
   const [dragging, setDragging] = useState(false);
 
   const setup = (p5, canvasParentRef) => {

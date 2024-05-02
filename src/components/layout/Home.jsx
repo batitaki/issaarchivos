@@ -7,10 +7,9 @@ const Home = () => {
 
   return (
     <>
-
-      <Fan/>
     <div className="home-img">
       <div className='home-sketch'>
+      <Fan/>
      </div>
     </div>
 

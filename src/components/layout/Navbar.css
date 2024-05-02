@@ -12,11 +12,16 @@
   font-style: normal;
   z-index: 9;
   background-color: transparent;
-  opacity: 0.8;
 }
 
-.sidenav * {
-  background-color: transparent !important;
+.sidenav .nav-container,
+.sidenav .nav-container .nav-logo,
+.sidenav .nav-container .nav-options,
+.sidenav .nav-container .nav-options .nav-link,
+.sidenav .nav-container .nav-options .toggle-button,
+.sidenav .nav-container .nav-options .search-button,
+.sidenav .nav-container .nav-options .search-text {
+  background-color: transparent;
 }
 
 .expanded {
@@ -39,6 +44,7 @@
 }
 
 .nav-options {
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,6 +53,7 @@
 }
 
 .nav-link {
+    background-color: transparent;
   padding: 10px 15px;
   text-decoration: none;
   font-size: 14px;
@@ -54,10 +61,12 @@
 }
 
 .toggle-button:hover {
+
   color: rgb(0, 0, 0);
 }
 
 .toggle-button {
+  background-color: transparent;
   display: flex;
   justify-content: start;
   flex-direction: row;
@@ -69,6 +78,7 @@
 }
 
 .search-button {
+  background-color: transparent;
   color:rgb(0, 0, 0);
   border: none;
   padding: 8px 16px;
@@ -78,10 +88,12 @@
 }
 
 .search-button:hover {
+  background-color: transparent;
   color:  rgba(0, 0, 0, 0.8);
 }
 
 .search-text {
+  background-color: transparent;
   padding: 10px 15px;
   text-decoration: none;
   font-size: 13px;
@@ -90,6 +102,7 @@
 }
 
 .side-options {
+  background-color: transparent;
   position: absolute;
   top: 5;
   right: 2vw;
@@ -98,6 +111,7 @@
 .search-input {
   -webkit-appearance: none;
   -moz-appearance: none;
+  background-color: transparent;
   appearance: none;
   border: none;
   border-bottom: 1px solid rgb(0, 0, 0);
@@ -105,3 +119,15 @@
   outline: none;
 }
 
+
+.search-input.active {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: transparent;
+  appearance: none;
+  border: none;
+  border-bottom: 1px solid rgb(0, 0, 0);
+  font-family: "Charis SIL", serif;
+  outline: none;
+
+}

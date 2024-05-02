@@ -16,46 +16,36 @@ const CartPreview = () => {
   return (
     <div className="cart-preview">
       <div className="cart-preview-elements">
-        <p className="title"> Your Cart</p>
-        <div className="cart-titles">
-          <p> Product </p>
-          <p> Price </p>
-          <p> Color </p>
-          <p> Size </p>
-          <p> Total </p>
-        </div>
-
-        <div className="separator" />
-
         {cartItems.map((item, index) => (
-          <div key={index} className="cart-item">
-            <div className="item-container">
-              <img
-                className="item"
-                src={item.selectedMedia}
-                alt={item.productDetails.Name}
-              />
+          <>
+            <div key={index} className="cart-preview-item">
+              <div className="item-container">
+                <img className="item" src={item.selectedMedia} />
+              </div>
+              <div className="cart-r-elements">
+                <p className="item-price"> {item.productDetails.Name} | {item.productDetails.Price} $ </p>
+
+                <div className="cart-preview-color-size">
+                  COLOR
+                  <div
+                    className="preview-color-circle"
+                    style={{ backgroundColor: item.selectedColor }}
+                  ></div>
+                  SIZE
+                  <p className="item-size">
+                    {item.selectedSize && ` ${item.selectedSize}`}
+                  </p>
+                </div>
+              </div>
             </div>
-            <p className="item-price">{item.productDetails.Price} USD</p>
-            <div
-              className="color-circle"
-              style={{ backgroundColor: item.selectedColor }}
-            ></div>
-            <p className="item-size">
-              {item.selectedSize && ` ${item.selectedSize}`}
-            </p>
-            <p className="item-final-price">
-              {" "}
-              {item.productDetails.Price * item.quantity}{" "}
-            </p>
-          </div>
+          </>
         ))}
-        <div className="separator" />
+
         <div className="subtotal">
-          <p className="title"> Subtotal: </p>
-          <p className="title"> {subtotal} USD </p>
+          <p className="item-price"> SUBTOTAL </p>
+          <p className="item-price"> {subtotal} $ </p>
         </div>
-        <button className="checkout">Chek Out</button>
+        <button className="preview-checkout">Check Out</button>
       </div>
     </div>
   );

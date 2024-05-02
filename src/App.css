@@ -20,11 +20,15 @@
   font-family: "Charis SIL", serif;
   display: flex;
   justify-content: center;
-  color:rgb(0, 0, 0);
-  animation: spin 1s linear infinite; /* Agrega una animación llamada 'spin' */
+  color: rgb(0, 0, 0);
+  animation: opacityAnimation 1s ease infinite alternate; /* Agrega una animación de opacidad */
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); } /* Define la transformación inicial */
-  100% { transform: rotate(360deg); } /* Define la transformación final */
+@keyframes opacityAnimation {
+  0% {
+    opacity: 1; /* Estado inicial: completamente opaco */
+  }
+  100% {
+    opacity: 0.4; /* Estado final: semi-opaco */
+  }
 }

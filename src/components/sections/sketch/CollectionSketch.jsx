@@ -1,37 +1,40 @@
 import React, { useState } from "react";
 import Sketch from "react-p5";
 
-import img1 from "../../../assets/panta2.png";
-import img2 from "../../../assets/sweater.png";
-import img3 from "../../../assets/maniqui4.png";
-import img4 from "../../../assets/campera2.png";
-import img5 from "../../../assets/panta.png";
-import img6 from "../../../assets/pollera.png";
-import img7 from "../../../assets/sweater3.png";
-import img8 from "../../../assets/campera.png";
-import img9 from "../../../assets/panta-cuero.png";
+import img1 from "../../../assets/model-chaleco.png";
+import img2 from "../../../assets/model-corset.png";
+import img3 from "../../../assets/model.png";
+import img4 from "../../../assets/model-medias.png";
+import img5 from "../../../assets/model-pant.png";
+import img6 from "../../../assets/model-bota-1.png";
+import img7 from "../../../assets/model-shirt.png";
+import img8 from "../../../assets/model-sombrero.png";
+import img9 from "../../../assets/model-top.png";
+import img10 from "../../../assets/model-bota-2.png"; // Nueva imagen agregada
 
 export default () => {
-  let imgA, imgB, imgC, imgD, imgE, imgF, imgI, imgG, imgH;
+  let imgA, imgB, imgC, imgD, imgE, imgF, imgI, imgG, imgH, imgJ; // Variable para la nueva imagen
 
-  let imgAX = 320,
-    imgAY = 360,
-    imgBX = 290,
+let imgAX =  110,
+    imgAY = 100,
+    imgBX = 390,
     imgBY = 130,
-    imgDX = 20,
-    imgDY = 115,
-    imgEX = 60,
-    imgEY = 360,
-    imgFX = 1187,
-    imgFY = 380,
-    imgIX = 920,
+    imgDX = 390,
+    imgDY = 360,
+    imgEX = 130,
+    imgEY = 400,
+    imgFX = 1250,
+    imgFY = 460,
+    imgIX = 900,
     imgIY = 130,
-    imgCX = window.innerWidth / 2 - 180,
+    imgCX = window.innerWidth / 2 - 115,
     imgCY = 50,
-    imgGX = 1180,
-    imgGY = 130,
-    imgHX = 938,
-    imgHY = 380;
+    imgGX = 1175,
+    imgGY = 170,
+    imgHX = 900,
+    imgHY = 420,
+    imgJX = 1170, // Coordenadas iniciales de la nueva imagen
+    imgJY = 420; // Coordenadas iniciales de la nueva imagen
 
   let offsetX = 0,
     offsetY = 0;
@@ -42,7 +45,8 @@ export default () => {
     draggingImgF = false,
     draggingImgI = false,
     draggingImgG = false,
-    draggingImgH = false;
+    draggingImgH = false,
+    draggingImgJ = false; // Variable de estado para la nueva imagen
 
   const preload = (p5) => {
     imgA = p5.loadImage(img1); // PANTALON DE JEAN
@@ -54,6 +58,7 @@ export default () => {
     imgI = p5.loadImage(img7); // SWATER APRETADO
     imgG = p5.loadImage(img8); // CAMPERA AZUL
     imgH = p5.loadImage(img9); // PANTA CUERO
+    imgJ = p5.loadImage(img10); // NUEVA IMAGEN
   };
 
   const setup = (p5, canvasParentRef) => {
@@ -61,20 +66,21 @@ export default () => {
       canvasParentRef
     );
 
-    imgA.resize(200, 0); // PANTALON DE JEAN
-    imgB.resize(250, 0); // SWEATER GRIS 1
-    imgD.resize(255, 0); // CAMPERA CUERO
+    imgA.resize(158, 0);
+    imgB.resize(145, 0); // SWEATER GRIS 1
+    imgD.resize(165, 0); // CAMPERA CUERO
     // maniqui
-    imgC.resize(385, 0); // IMAGEN ESTATICA MANIQUI
-    imgE.resize(180, 0); // PANTALON GRIS
-    imgF.resize(220, 0); // POLLERA
-    imgI.resize(225, 0); // SWATER APRETADO
-    imgG.resize(255, 0); // CAMPERA AZUL
-    imgH.resize(185, 0); // PANTA CUERO
+    imgC.resize(225, 0); // IMAGEN ESTATICA MANIQUI
+    imgE.resize(158, 0); // PANTALON GRIS
+    imgF.resize(74, 0); // POLLERA
+    imgI.resize(175, 0); // SWATER APRETADO
+    imgG.resize(152, 0); // CAMPERA AZUL
+    imgH.resize(182, 0); // PANTA CUERO
+    imgJ.resize(68, 0); // NUEVA IMAGEN
   };
 
   const draw = (p5) => {
-    p5.background(255);
+    p5.background(250, 255, 250);
 
     if (draggingImgA) {
       imgAX = p5.mouseX + offsetX;
@@ -108,24 +114,21 @@ export default () => {
       imgHX = p5.mouseX + offsetX;
       imgHY = p5.mouseY + offsetY;
     }
+    if (draggingImgJ) {
+      imgJX = p5.mouseX + offsetX;
+      imgJY = p5.mouseY + offsetY;
+    }
 
     p5.image(imgC, imgCX, imgCY);
-
     p5.image(imgA, imgAX, imgAY);
-
     p5.image(imgF, imgFX, imgFY);
-
     p5.image(imgE, imgEX, imgEY);
-
     p5.image(imgB, imgBX, imgBY);
-
     p5.image(imgI, imgIX, imgIY);
-
     p5.image(imgD, imgDX, imgDY);
-
     p5.image(imgG, imgGX, imgGY);
-
     p5.image(imgH, imgHX, imgHY);
+    p5.image(imgJ, imgJX, imgJY); // Dibuja la nueva imagen
   };
 
   const mousePressed = (p5) => {
@@ -201,6 +204,15 @@ export default () => {
       draggingImgH = true;
       offsetX = imgHX - p5.mouseX;
       offsetY = imgHY - p5.mouseY;
+    } else if (
+      p5.mouseX > imgJX &&
+      p5.mouseX < imgJX + imgJ.width &&
+      p5.mouseY > imgJY &&
+      p5.mouseY < imgJY + imgJ.height
+    ) {
+      draggingImgJ = true;
+      offsetX = imgJX - p5.mouseX;
+      offsetY = imgJY - p5.mouseY;
     }
   };
 
@@ -213,17 +225,18 @@ export default () => {
     draggingImgI = false;
     draggingImgG = false;
     draggingImgH = false;
+    draggingImgJ = false;
   };
 
   return (
     <>
-    <Sketch
-      preload={preload}
-      setup={setup}
-      draw={draw}
-      mousePressed={mousePressed}
-      mouseReleased={mouseReleased}
-    />
+      <Sketch
+        preload={preload}
+        setup={setup}
+        draw={draw}
+        mousePressed={mousePressed}
+        mouseReleased={mouseReleased}
+      />
     </>
   );
 };
