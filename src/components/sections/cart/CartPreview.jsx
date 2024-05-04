@@ -23,7 +23,7 @@ const CartPreview = () => {
                 <img className="item" src={item.selectedMedia} />
               </div>
               <div className="cart-r-elements">
-                <p className="item-price"> {item.productDetails.Name} | {item.productDetails.Price} $ </p>
+                <p className="item-price"> {item.productDetails.Name} | ${item.productDetails.Price}  </p>
 
                 <div className="cart-preview-color-size">
                   COLOR
@@ -43,7 +43,7 @@ const CartPreview = () => {
 
         <div className="subtotal">
           <p className="item-price"> SUBTOTAL </p>
-          <p className="item-price"> {subtotal} $ </p>
+          <p className="item-price">${subtotal}  </p>
         </div>
         <button className="preview-checkout">Check Out</button>
       </div>
