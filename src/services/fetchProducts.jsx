@@ -101,3 +101,30 @@ export const getCategoryById = async (categoryId) => {
     return null;
   }
 };
+
+export const createPayment = async (paymentData) => {
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_REACT_APP_API_ENDPOINT}/products/payment`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(paymentData),
+      }
+    );
+
+    if (response.ok) {
+      const responseData = await response.json();
+      return { success: true, id: responseData.id };
+    } else {
+      const errorData = await response.json();
+      return { success: false, error: errorData.error };
+    }
+  } catch (error) {
+    console.error("Error al crear el pago:", error);
+    return { success: false, error: "Error al crear el pago" };
+  }
+};
+

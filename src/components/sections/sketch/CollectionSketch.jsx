@@ -128,7 +128,7 @@ let imgAX =  110,
     p5.image(imgD, imgDX, imgDY);
     p5.image(imgG, imgGX, imgGY);
     p5.image(imgH, imgHX, imgHY);
-    p5.image(imgJ, imgJX, imgJY); // Dibuja la nueva imagen
+    p5.image(imgJ, imgJX, imgJY); 
   };
 
   const mousePressed = (p5) => {

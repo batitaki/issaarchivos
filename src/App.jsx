@@ -14,6 +14,7 @@ import { AuthProvider } from './components/user/Login';
 import CollectionSketch from './components/sections/sketch/CollectionSketch';
 import Collection from './components/sections/collections/Collection';
 import About from './components/layout/About';
+import PaymentComponent from './components/sections/cart/CreatePayment';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Routes>
             <Route path="/issaarchivos/" element={<Home />} />
             <Route path="/issaarchivos/fan" element={<Fan />} />
+            <Route path="/issaarchivos/payment" element={<PaymentComponent />} />
             <Route path="/issaarchivos/shop" element={<Shop />} />
             <Route path="/issaarchivos/createProduct" element={<CreateProduct />} />
             <Route path="/issaarchivos/product/:id" element={<ProductDetail />} />

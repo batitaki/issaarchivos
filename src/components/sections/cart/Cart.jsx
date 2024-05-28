@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Cart.css";
 
+import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
+initMercadoPago('YOUR_PUBLIC_KEY');
+
+
 const Cart = () => {
   const [cartItems, setCartItems] = useState([]);
 
@@ -88,6 +92,9 @@ const Cart = () => {
         <p className="title"> $ {subtotal} </p>
       </div>
       <button className="checkout">Check Out</button>
+
+<Wallet initialization={{ preferenceId: '<PREFERENCE_ID>' }} customization={{ texts:{ valueProp: 'smart_option'}}} />
+
     </div>
   );
 };
