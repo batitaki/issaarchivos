@@ -3,7 +3,7 @@ import { createPayment } from "../../../services/fetchProducts";
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
 import './Card.css'
 
-initMercadoPago('APP_USR-e534fc3a-7f81-4a0b-856d-5b48c952160c');
+initMercadoPago('APP_USR-4475351e-fae7-4750-909c-fb4c7bf59c06');
 
 const PaymentComponent = () => {
   const [paymentResult, setPaymentResult] = useState(null);
@@ -11,7 +11,7 @@ const PaymentComponent = () => {
   // Valores establecidos de antemano
   const name = "Producto Ejemplo";
   const quantity = 1;
-  const price = 100;
+  const price = 11000;
 
   const handlePayment = async () => {
     const paymentData = {
