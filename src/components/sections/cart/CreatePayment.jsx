@@ -1,17 +1,20 @@
 import React, { useState } from "react";
 import { createPayment } from "../../../services/fetchProducts";
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
-import './Card.css'
+import './Card.css';
 
 initMercadoPago('APP_USR-4475351e-fae7-4750-909c-fb4c7bf59c06');
 
 const PaymentComponent = () => {
   const [paymentResult, setPaymentResult] = useState(null);
 
-  // Valores establecidos de antemano
-  const name = "Producto Ejemplo";
-  const quantity = 1;
-  const price = 11000;
+  // Obtener el carrito de compras desde localStorage
+  const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+
+  // Calcular el precio total y otros detalles necesarios
+  const name = cartItems.length > 0 ? cartItems[0].productDetails.Name : "No items";
+  const quantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const price = cartItems.reduce((total, item) => total + (item.quantity * item.productDetails.Price), 0);
 
   const handlePayment = async () => {
     const paymentData = {
@@ -31,7 +34,7 @@ const PaymentComponent = () => {
   return (
     <div className="card-container">
       <div className="card">
-        <img className="card-img" src="https://res.cloudinary.com/dpnrapsvi/image/upload/v1715549272/Media/r4zrengev1itwkozf72u.png" alt="" />
+        <img className="card-img" src={cartItems.length > 0 ? cartItems[0].selectedMedia : "https://res.cloudinary.com/dpnrapsvi/image/upload/v1715549272/Media/r4zrengev1itwkozf72u.png"} alt="" />
         <p><strong>Name:</strong> {name}</p>
         <p><strong>Quantity:</strong> {quantity}</p>
         <p><strong>Price:</strong> ${price}</p>
