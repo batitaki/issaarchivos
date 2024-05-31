@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./Cart.css";
 
 const Cart = () => {
@@ -87,7 +88,7 @@ const Cart = () => {
         <p className="title"> Subtotal: </p>
         <p className="title"> $ {subtotal} </p>
       </div>
-      <button className="checkout">Check Out</button>
+      <Link to="/issaarchivos/payment " className="checkout">Check Out</Link>
     </div>
   );
 };

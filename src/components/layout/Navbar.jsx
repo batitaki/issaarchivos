@@ -53,7 +53,7 @@ const Navbar = () => {
             Collections
           </Link>
           <Link className="nav-link" to="/issaarchivos/collabs">
-            Virtual Fiting
+            Virtual Art
           </Link>
           <Link className="nav-link" to="/issaarchivos/about">
             About

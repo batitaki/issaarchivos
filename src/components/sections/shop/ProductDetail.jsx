@@ -195,8 +195,8 @@ const Product = () => {
           <p className="loading">LOADING...</p>
         )}
       </div>
-      <Shop />
       {loggedIn && <PhotoUploader productId={id} />}{" "}
+      <Shop />
     </>
   );
 };

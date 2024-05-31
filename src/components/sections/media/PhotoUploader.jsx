@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { uploadMedia } from '../../../services/fetchMedia.jsx';
 import { useAuth } from '../../user/Login.jsx';
 import { Navigate } from 'react-router-dom';
-
+import './PhotoUploader.css';
 
 const PhotoUploader = ({ productId }) => {
   const [selectedFile, setSelectedFile] = useState(null);
@@ -42,9 +42,9 @@ const PhotoUploader = ({ productId }) => {
   }
 
   return (
-    <div>
-      <input type="file" onChange={handleFileChange} />
-      <button onClick={handleUpload}>Upload</button>
+    <div className="uploader-container">
+      <input className="file-input" type="file" onChange={handleFileChange} />
+      <button className="upload-button" onClick={handleUpload}>Upload images for this product</button>
     </div>
   );
 };
